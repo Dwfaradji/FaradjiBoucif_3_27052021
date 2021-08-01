@@ -1,0 +1,84 @@
+.logo img{
+   width: 50%;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+}
+form{
+    display: flex;
+    justify-content: center;
+    background-color: gainsboro;
+    padding-top: 10px;
+}
+input{
+    border: none;
+    background-color: gainsboro;
+}
+.bloc_titre{
+
+    background-color: gainsboro;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 10px;
+  
+}
+.bloc_titre button{
+    border-radius: 15px;
+    background-color: blueviolet;
+    width: 50%;
+    
+}
+.bloc_titre h1, p {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 70%;
+}
+nav li{
+    list-style-type: none;
+    display: grid;
+    grid-template-rows:1fr ;
+    border: 1px solid black;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+   padding: 10px;
+
+}
+nav ul{
+    gap: 10px;
+    display: grid;
+    
+}
+.bloc_restaurants{
+    display: grid;
+    gap: 10px;
+   
+}
+.bloc_restaurants article{
+    display: grid;
+    
+    grid-template-rows: 0fr 0fr;
+    border: 2px solid black;
+    border-radius: 15px;
+    
+}
+.bloc_restaurants img{
+    object-fit: cover;
+    width:100% ;
+    height: 150px;
+    border-radius: 15px 15px 0px 0px;
+}
+.carte_texte{
+padding: 10px;
+}
+.carte_texte h3, p{
+    margin: 0px;
+}
+footer{
+    background-color: rgb(39, 38, 38);
+    color:white;
+    padding: 10px;
+    margin-top: 10px;
+}
