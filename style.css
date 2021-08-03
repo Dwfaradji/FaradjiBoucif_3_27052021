@@ -1,23 +1,27 @@
+body{
+    margin: 0px;
+}
 .logo img{
    width: 50%;
 }
 .logo{
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
 form{
     display: flex;
     justify-content: center;
-    background-color: gainsboro;
-    padding-top: 10px;
+    background-color: rgb(234, 234, 234);
+    padding: 10px;
 }
 input{
     border: none;
-    background-color: gainsboro;
+    background-color: rgb(234, 234, 234);
 }
 .bloc_titre{
 
-    background-color: gainsboro;
+    background-color: rgb(246, 246, 246);
     justify-content: center;
     text-align: center;
     padding-bottom: 30px;
@@ -25,42 +29,78 @@ input{
   
 }
 .bloc_titre button{
-    border-radius: 15px;
-    background-color: blueviolet;
+    border-radius: 25px;
+    background-color: #9356DC;
+    border-color: #9356DC;
     width: 50%;
+    padding: 10px;
+    color: white;
     
 }
 .bloc_titre h1, p {
     display: grid;
     justify-content: center;
     grid-template-columns: 70%;
+    margin: 0px;
+    padding: 10px;
+}
+.fonctionement{
+    padding: 15px;
 }
 nav li{
-    list-style-type: none;
-    display: grid;
-    grid-template-rows:1fr ;
-    border: 1px solid black;
+   display: grid;
+   grid-template-columns: 0fr 0.1fr 1fr;
+     background-color: rgb(246,246,246);
     border-radius: 15px;
-    justify-content: center;
     align-items: center;
-   padding: 10px;
-
+    padding-top: 15px;
+    padding-bottom: 15px;
+    list-style-type: none;
+	counter-increment: fonction; /* on incrémente le compteur à chaque nouveau li */
+	margin-bottom: 10px
+  
 }
-nav ul{
+nav li::before {
+	content: counter(fonction); /* on affiche le compteur */
+	padding: 10px;
+	background:#9356DC;
+	border-radius: 80px;
+	font-weight: bold;
+	font-size: 0.8em;
+	color: white;	
+    position: relative;
+    right: 10px;	
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+}
+
+
+nav li a{
+   text-decoration: none;
+    color: black;
+}
+nav ol{
     gap: 10px;
     display: grid;
+    padding: 15px;
+    counter-reset: fonction;
     
 }
 .bloc_restaurants{
     display: grid;
     gap: 10px;
+    background-color: rgb(246, 246, 246);
+    padding: 0px 15px 50px 15px;
    
 }
 .bloc_restaurants article{
     display: grid;
-    
+    background-color: white;
     grid-template-rows: 0fr 0fr;
-    border: 2px solid black;
+    box-shadow: 15px 15px 15px rgb(219, 218, 218);
     border-radius: 15px;
     
 }
@@ -72,13 +112,27 @@ nav ul{
 }
 .carte_texte{
 padding: 10px;
+display: grid;
+grid-template-columns: 2fr 0.5fr;
 }
-.carte_texte h3, p{
+.icone_coeur{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.carte_texte h3, span{
     margin: 0px;
 }
 footer{
     background-color: rgb(39, 38, 38);
     color:white;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 20px;
+    
+}
+footer li{
+    display: grid;
+    grid-template-columns: 0.1fr 1fr ;
+}
+footer ul{
+    padding: 0px;
 }
