@@ -1,0 +1,178 @@
+$color-primary:#9356DC;
+$color-secondary:#FF79DA;
+$color-tertiary:#99E2D0;
+$color-fond-primary:rgb(246, 246, 246);
+$color-fond-secondary:rgb(234, 234, 234);
+$color-degrad:linear-gradient(to bottom, $color-secondary, $color-primary);
+
+@function pastel($clr) {
+    $hue: hue($clr);
+    $sat: 90%;
+    $light: 95%;
+    $pastel: hsl($hue, $sat, $light);
+
+    @return $pastel;
+} 
+
+body
+{
+    margin: 0px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo
+{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    img{
+        width: 50%;
+    }
+}
+
+form
+{
+    display: flex;
+    justify-content: center;
+    background-color: $color-fond-secondary;
+    padding: 10px;
+
+    input{
+        border: none;
+        background-color: $color-fond-secondary;
+    }
+}
+.bloc_titre
+{
+    background-color:$color-fond-primary;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 10px;
+  
+    button{
+    border-radius: 25px;
+    background-image: $color-degrad;
+    opacity: 0.8;
+    border:none;
+    width: 50%;
+    padding: 10px;
+    color: white;
+    
+    }
+    }
+
+    h1, p {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 70%;
+    margin: 0px;
+    padding: 10px;
+}
+
+.fonctionement{
+    padding: 15px;
+    
+    nav li{
+    display: grid;
+    grid-template-columns: 0fr 0.1fr 1fr;
+     background-color: $color-fond-primary;
+    border-radius: 15px;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    list-style-type: none;
+	counter-increment: fonction; /* on incrémente le compteur à chaque nouveau li */
+	margin-bottom: 10px;
+    
+    }
+    nav li::before {
+	content: counter(fonction); /* on affiche le compteur */
+	padding: 10px;
+	background:$color-primary;
+	border-radius: 80px;
+	font-weight: bold;
+	font-size: 0.8em;
+	color: white;	
+    position: relative;
+    right: 10px;	
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    }
+    nav li a{
+   text-decoration: none;
+    color: black;
+    }
+    nav ol{
+    gap: 10px;
+    display: grid;
+    padding: 15px;
+    counter-reset: fonction;
+    }
+    nav li:hover{
+        
+            background-color: pastel($color-primary);
+    }
+}
+.bloc_restaurants{
+    display: grid;
+    gap: 10px;
+    background-color:$color-fond-primary;
+    padding: 0px 15px 50px 15px;
+   
+    article{
+    display: grid;
+    background-color: white;
+    grid-template-rows: 0fr 0fr;
+    box-shadow: 15px 15px 15px rgb(219, 218, 218);
+    border-radius: 15px;
+    
+}
+    img{
+    object-fit: cover;
+    width:100% ;
+    height: 150px;
+    border-radius: 15px 15px 0px 0px;
+}
+}
+.carte_texte{
+padding: 10px;
+display: grid;
+grid-template-columns: 2fr 0.5fr;
+
+    h3, span{
+    margin: 0px;
+}
+}
+.icone_coeur{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    a{
+        color: black;
+    }
+    }
+    .fab, .far:hover {
+        font-weight: 600;
+        color: #d06adb;
+
+}
+footer{
+    background-color: rgb(39, 38, 38);
+    color:white;
+    padding: 20px;
+    
+li{
+    display: grid;
+    grid-template-columns: 0.1fr 1fr ;
+}
+ul{
+    padding: 0px;
+}
+}
