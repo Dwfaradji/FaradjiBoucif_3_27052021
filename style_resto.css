@@ -1,3 +1,4 @@
+/* Haut de page */
 .header_page{
     display: grid;
     grid-template-columns: 0fr 1fr ;
@@ -20,11 +21,18 @@ a{
     border: none;
     font-size: large;
 }
+/* Banniere */
+
 .banniere img{
     width: 100%;
     height: 250px;
     object-fit: cover;
 
+}
+/* Carte des menu */
+.conteneur_menu{
+    background-color: rgb(246, 246, 246);
+    padding: 15px;
 }
 .menu{
     background-color: rgb(246, 246, 246);
@@ -32,12 +40,18 @@ a{
     gap: 15px;
     padding: 15px;
     border-radius: 25px 25px 0px 0px;
+    
 }
+.conteneur_menu h2{
+    display: flex;
+    justify-content: space-around;
+}
+
 .fab, .far:hover {
     font-weight: 600;
     color: #d06adb;
   }
-.titre_menu{
+  .titre_menu{
     border-bottom: 2px solid #99E2D0;
     width: 40px;
 }
@@ -47,24 +61,21 @@ a{
     padding: 10px;
     background-color: white;
     border-radius: 15px;
-    
-}
-.menu article span{
-    display: flex;
-    align-items: flex-end;
-
-}
-.menu article p{
-    margin: 0px;
 }
 .menu article h3{
     margin: 0px;
 }
-.menu h2{
-    display: flex;
-    justify-content: space-between;
+.menu article p{
+    margin: 0px;
 }
-.menu button{
+.menu article span{
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Boutton commander */
+
+button{
     border-radius: 25px ;
     width: 150px;
     padding: 10px;
@@ -74,17 +85,17 @@ a{
     background-image:linear-gradient(to bottom,  #FF79DA, #9356DC);
     opacity: 0.8;
     color: white;
-
 }
 .boutton{
     display: flex;
     justify-content: center;
 }
+/* pied de page */
+
 footer{
     background-color: rgb(39, 38, 38);
     color:white;
     padding: 20px;
-    
 }
 footer li{
     display: grid;
@@ -92,4 +103,35 @@ footer li{
 }
 footer ul{
     padding: 0px;
+}
+/*media tablette*/
+@media screen and (min-width:600px)
+{
+    
+    .boutton{
+        grid-column: 2;
+        justify-content: center;
+    }
+    
+    .bloc_menu{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        gap: 15px;
+    } 
+    .titre_menu{
+        height: 20px;
+    }  
+    .menu{
+        align-content: flex-start;
+    }
+    .conteneur_menu h2{
+        margin-right: auto;
+        margin-left: auto;
+        width: 30%;
+    }
+    .conteneur_menu{
+        border-radius: 15px 15px 0px 0px ;
+    }
+
 }

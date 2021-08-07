@@ -1,4 +1,4 @@
-@charset "UTF-8";
+/*haut de page*/
 body {
   margin: 0px;
 }
@@ -6,6 +6,7 @@ body {
 a {
   text-decoration: none;
   color: black;
+  display: contents;
 }
 
 .logo {
@@ -14,9 +15,10 @@ a {
   padding: 10px;
 }
 .logo img {
-  width: 50%;
+  width: 30%;
 }
 
+/* Barre de Recherche */
 form {
   display: flex;
   justify-content: center;
@@ -28,6 +30,7 @@ form input {
   background-color: #eaeaea;
 }
 
+/* Titre */
 .bloc_titre {
   background-color: #f6f6f6;
   justify-content: center;
@@ -38,9 +41,7 @@ form input {
 .bloc_titre button {
   border-radius: 25px;
   background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
-  opacity: 0.8;
   border: none;
-  width: 50%;
   padding: 10px;
   color: white;
 }
@@ -53,12 +54,13 @@ h1, p {
   padding: 10px;
 }
 
+/* Navigation */
 .fonctionement {
   padding: 15px;
 }
 .fonctionement nav li {
   display: grid;
-  grid-template-columns: 0fr 0.1fr 1fr;
+  grid-template-columns: 30px 30px 1fr;
   background-color: #f6f6f6;
   border-radius: 15px;
   align-items: center;
@@ -87,6 +89,7 @@ h1, p {
 .fonctionement nav li a {
   text-decoration: none;
   color: black;
+  display: contents;
 }
 .fonctionement nav ol {
   gap: 10px;
@@ -98,20 +101,24 @@ h1, p {
   background-color: #f1e7fe;
 }
 
-.bloc_restaurants {
+/* Restaurants */
+.conteneur_restaurants {
   display: grid;
-  gap: 10px;
   background-color: #f6f6f6;
   padding: 0px 15px 50px 15px;
 }
-.bloc_restaurants article {
+.conteneur_restaurants .bloc_restaurants {
+  display: grid;
+  gap: 15px;
+}
+.conteneur_restaurants article {
   display: grid;
   background-color: white;
   grid-template-rows: 0fr 0fr;
   box-shadow: 15px 15px 15px #dbdada;
   border-radius: 15px;
 }
-.bloc_restaurants img {
+.conteneur_restaurants img {
   object-fit: cover;
   width: 100%;
   height: 150px;
@@ -141,6 +148,7 @@ h1, p {
   color: #d06adb;
 }
 
+/* Pied de page */
 footer {
   background-color: #272626;
   color: white;
@@ -148,10 +156,36 @@ footer {
 }
 footer li {
   display: grid;
-  grid-template-columns: 0.1fr 1fr;
+  grid-template-columns: 25px 1fr;
 }
 footer ul {
   padding: 0px;
+}
+footer a {
+  color: white;
+}
+
+/* media tablette */
+@media screen and (min-width: 600px) {
+  .bloc_restaurants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fonctionement nav ol {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bloc_restaurants {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

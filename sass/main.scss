@@ -13,7 +13,7 @@ $color-degrad:linear-gradient(to bottom, $color-secondary, $color-primary);
 
     @return $pastel;
 } 
-
+/*haut de page*/
 body
 {
     margin: 0px;
@@ -21,6 +21,7 @@ body
 a {
     text-decoration: none;
     color: black;
+    display: contents;
 }
 
 .logo
@@ -29,10 +30,10 @@ a {
     justify-content: center;
     padding: 10px;
     img{
-        width: 50%;
+        width: 30%;
     }
 }
-
+/* Barre de Recherche */
 form
 {
     display: flex;
@@ -45,6 +46,8 @@ form
         background-color: $color-fond-secondary;
     }
 }
+/* Titre */
+
 .bloc_titre
 {
     background-color:$color-fond-primary;
@@ -54,125 +57,154 @@ form
     padding-top: 10px;
   
     button{
-    border-radius: 25px;
-    background-image: $color-degrad;
-    opacity: 0.8;
-    border:none;
-    width: 50%;
-    padding: 10px;
-    color: white;
-    
+        border-radius: 25px;
+        background-image: $color-degrad;
+        border:none;
+        padding: 10px;
+        color: white;
     }
-    }
-
-    h1, p {
+}
+h1, p 
+{
     display: grid;
     justify-content: center;
     grid-template-columns: 70%;
     margin: 0px;
     padding: 10px;
 }
-
-.fonctionement{
+/* Navigation */
+    
+.fonctionement
+{
     padding: 15px;
-    
     nav li{
-    display: grid;
-    grid-template-columns: 0fr 0.1fr 1fr;
-     background-color: $color-fond-primary;
-    border-radius: 15px;
-    align-items: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    list-style-type: none;
-	counter-increment: fonction; /* on incrémente le compteur à chaque nouveau li */
-	margin-bottom: 10px;
-    
+        display: grid;
+        grid-template-columns: 30px 30px 1fr;
+        background-color: $color-fond-primary;
+        border-radius: 15px;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        list-style-type: none;
+	    counter-increment: fonction; // on incrémente le compteur à chaque nouveau li 
+	    margin-bottom: 10px;
     }
     nav li::before {
-	content: counter(fonction); /* on affiche le compteur */
-	padding: 10px;
-	background:$color-primary;
-	border-radius: 80px;
-	font-weight: bold;
-	font-size: 0.8em;
-	color: white;	
-    position: relative;
-    right: 10px;	
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 10px;
-    height: 10px;
+	    content: counter(fonction); //on affiche le compteur 
+    	padding: 10px;
+	    background:$color-primary;
+	    border-radius: 80px;
+	    font-weight: bold;
+	    font-size: 0.8em;
+	    color: white;	
+        position: relative;
+        right: 10px;	
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10px;
+        height: 10px;
     }
     nav li a{
-   text-decoration: none;
-    color: black;
+        text-decoration: none;
+        color: black;
+        display: contents;
     }
     nav ol{
-    gap: 10px;
-    display: grid;
-    padding: 15px;
-    counter-reset: fonction;
+        gap: 10px;
+        display: grid;
+        padding: 15px;
+        counter-reset: fonction;
     }
     nav li:hover{
-        
-            background-color: pastel($color-primary);
+        background-color: pastel($color-primary);
     }
 }
-.bloc_restaurants{
+/* Restaurants */
+
+.conteneur_restaurants
+{
     display: grid;
-    gap: 10px;
     background-color:$color-fond-primary;
     padding: 0px 15px 50px 15px;
-   
+    .bloc_restaurants{
+        display: grid;
+        gap: 15px;
+    }
     article{
-    display: grid;
-    background-color: white;
-    grid-template-rows: 0fr 0fr;
-    box-shadow: 15px 15px 15px rgb(219, 218, 218);
-    border-radius: 15px;
-    
-}
+        display: grid;
+        background-color: white;
+        grid-template-rows: 0fr 0fr;
+        box-shadow: 15px 15px 15px rgb(219, 218, 218);
+        border-radius: 15px;
+    }
     img{
-    object-fit: cover;
-    width:100% ;
-    height: 150px;
-    border-radius: 15px 15px 0px 0px;
+        object-fit: cover;
+        width:100% ;
+        height: 150px;
+        border-radius: 15px 15px 0px 0px;
+    }
 }
-}
-.carte_texte{
-padding: 10px;
-display: grid;
-grid-template-columns: 2fr 0.5fr;
-
+.carte_texte
+{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
     h3, span{
-    margin: 0px;
+        margin: 0px;
+    }
 }
-}
-.icone_coeur{
+.icone_coeur
+{
     display: grid;
     justify-content: center;
     align-items: center;
     a{
         color: black;
     }
-    }
+}
     .fab, .far:hover {
         font-weight: 600;
         color: #d06adb;
-
 }
-footer{
+/* Pied de page */
+footer
+{
     background-color: rgb(39, 38, 38);
     color:white;
     padding: 20px;
     
-li{
-    display: grid;
-    grid-template-columns: 0.1fr 1fr ;
+    li{
+        display: grid;
+        grid-template-columns: 25px 1fr ;
+    }
+    ul{
+        padding: 0px;
+    }
+    a{
+        color: white;
+    }
 }
-ul{
-    padding: 0px;
+/* media tablette */
+@media  screen and (min-width:600px) 
+{
+    .bloc_restaurants{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    footer ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+    } 
+    .fonctionement nav ol{
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }  
 }
-}
+@media screen and (min-width: 1200px){
+    .bloc_restaurants{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+} 
+
+    
