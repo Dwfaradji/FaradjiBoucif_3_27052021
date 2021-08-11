@@ -27,13 +27,30 @@ a{
     width: 100%;
     height: 250px;
     object-fit: cover;
+  
 
 }
 /* Carte des menu */
 .conteneur_menu{
+  
+    transform: scale(0);
+    transition: transform linear 2s;
+}
+.anim{
+   
     background-color: rgb(246, 246, 246);
     padding: 15px;
+   position: relative;
+    margin-top: -30px;
+    
+    
+  
+    
 }
+.conteneur_menu :active{
+    transform: scale(1) ;
+}
+
 .menu{
     background-color: rgb(246, 246, 246);
     display: grid;
@@ -42,14 +59,35 @@ a{
     border-radius: 25px 25px 0px 0px;
     
 }
-.conteneur_menu h2{
-    display: flex;
-    justify-content: space-around;
-}
 
-.fab, .far:hover {
-    font-weight: 600;
+.coeur {
+    display: grid;
+    grid-template-columns: 200px 0fr ;
+    justify-content: center;
+    align-items: center;
+  }
+.coeur__icone {
+    color: black;
+    margin-left: 20px;
+    display: flex;
+  }
+  .coeur .x2 {
+    position: absolute;
+    color: transparent;
+    transition-property: transform, color;
+    transition-duration: 400ms;
+    transition-delay: 400ms;
+    transition-timing-function: ease-in-out;
+    transform-origin: bottom;
+  }
+  .coeur :hover {
     color: #d06adb;
+    font-weight: 600;
+    transform: scale(1);
+    transition-delay: 100ms;
+    transition-timing-function: ease-in-out;
+    transition-duration: 1s;
+    transform-origin: 0% 90%;
   }
   .titre_menu{
     border-bottom: 2px solid #99E2D0;
@@ -124,11 +162,7 @@ footer ul{
     }  
     .menu{
         align-content: flex-start;
-    }
-    .conteneur_menu h2{
-        margin-right: auto;
-        margin-left: auto;
-        width: 30%;
+    
     }
     .conteneur_menu{
         border-radius: 15px 15px 0px 0px ;

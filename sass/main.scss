@@ -1,9 +1,28 @@
+@import "./pages.scss";
+
 $color-primary:#9356DC;
 $color-secondary:#FF79DA;
 $color-tertiary:#99E2D0;
 $color-fond-primary:rgb(246, 246, 246);
 $color-fond-secondary:rgb(234, 234, 234);
 $color-degrad:linear-gradient(to bottom, $color-secondary, $color-primary);
+$color: #d06adb;
+
+@keyframes coeur {
+    0% {
+      color: violet;
+    }
+    33% {
+        color: violet;
+    }
+    66% {
+        color: violet;
+    }
+    100% {
+        color: violet;
+    }
+  }
+
 
 @function pastel($clr) {
     $hue: hue($clr);
@@ -154,19 +173,49 @@ h1, p
         margin: 0px;
     }
 }
-.icone_coeur
-{
+@keyframes coeur {
+    0% {
+        color: $color;
+        transform: scale(0);
+    }
+    33% {
+        color: $color;
+        transform: scale(.3);
+    }
+    66% {
+        color: $color;
+        transform: scale(.5);
+    }
+    100% {
+        color: $color;
+        transform: scale(1);
+    }
+  }
+.coeur
+ {
     display: grid;
     justify-content: center;
     align-items: center;
-    a{
+    &__icone{
         color: black;
-    }
-}
-    .fab, .far:hover {
-        font-weight: 600;
-        color: #d06adb;
-}
+        display: flex;
+       }
+        .x2{
+            position: absolute;
+            color: transparent;
+            transition-property: transform,color ;
+            
+        }
+         :hover{
+            color: $color;
+            font-weight: 600;
+            transform: scale(1);
+            transition-delay: 100ms;
+            transition-timing-function: ease-in-out;
+            transition-duration: 1s;
+            transform-origin: 0% 90%;
+        }
+} 
 /* Pied de page */
 footer
 {
@@ -206,5 +255,3 @@ footer
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 } 
-
-    
