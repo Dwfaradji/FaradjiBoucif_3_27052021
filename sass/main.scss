@@ -8,21 +8,6 @@ $color-fond-secondary:rgb(234, 234, 234);
 $color-degrad:linear-gradient(to bottom, $color-secondary, $color-primary);
 $color: #d06adb;
 
-@keyframes coeur {
-    0% {
-      color: violet;
-    }
-    33% {
-        color: violet;
-    }
-    66% {
-        color: violet;
-    }
-    100% {
-        color: violet;
-    }
-  }
-
 
 @function pastel($clr) {
     $hue: hue($clr);
@@ -37,12 +22,12 @@ body
 {
     margin: 0px;
 }
-a {
+a 
+{
     text-decoration: none;
     color: black;
     display: contents;
 }
-
 .logo
 {
     display: flex;
@@ -173,50 +158,61 @@ h1, p
         margin: 0px;
     }
 }
-@keyframes coeur {
+@keyframes coeur2 {
     0% {
-        color: $color;
-        transform: scale(0);
+        transform: scale(.1);
+        
     }
     33% {
-        color: $color;
+        
         transform: scale(.3);
     }
     66% {
-        color: $color;
-        transform: scale(.5);
+        
+        transform: scale(.6);
     }
     100% {
-        color: $color;
+       
         transform: scale(1);
     }
   }
-.coeur
- {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    &__icone{
+  .coeur
+  {
+     font-size: 1.1em;
+     display: grid;
+     justify-content: center;
+     align-items: center;
+     &__icone {
         color: black;
+        margin-left: 20px;
         display: flex;
-       }
-        .x2{
-            position: absolute;
-            color: transparent;
-            transition-property: transform,color ;
-            
-        }
-         :hover{
-            color: $color;
+        font-size: 1.6em;
+        :last-child &:hover{
+            animation: coeur2 1s ease-in-out 400ms  both;
+            background: text $color-degrad;
             font-weight: 600;
-            transform: scale(1);
-            transition-delay: 100ms;
-            transition-timing-function: ease-in-out;
-            transition-duration: 1s;
-            transform-origin: 0% 90%;
-        }
-} 
-/* Pied de page */
+            color: transparent;
+      }
+      }
+     .vide{
+            color: black;
+            z-index: 1;
+            animation: coeur2 1s ease-in-out 400ms  both;
+               
+          
+
+                }
+                
+        .plein  {
+            position: absolute;
+            z-index: 2;
+           
+       
+           }
+}
+ 
+
+ /* Pied de page */
 footer
 {
     background-color: rgb(39, 38, 38);
