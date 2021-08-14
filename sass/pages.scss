@@ -6,19 +6,13 @@ $color-fond-secondary:rgb(234, 234, 234);
 $color-degrad:linear-gradient(to bottom, $color-secondary, $color-primary);
 $color: #d06adb;
 
+
+
 @keyframes coeur2 {
     0% {
-        transform: scale(.1);
-        
+        transform: scale(.1);      
     }
-    33% {
-        
-        transform: scale(.3);
-    }
-    66% {
-        
-        transform: scale(.6);
-    }
+  
     100% {
        
         transform: scale(1);
@@ -91,6 +85,29 @@ a {
     }
   }
 
+  
+  @keyframes anim_menu {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes anim_carte{
+    0% {
+        transform: scaleY(0);
+       
+    }
+    100% {
+        transform: scaleY(1);
+        
+    }
+}
+
   .conteneur_menu
   {
     background-color: rgb(246, 246, 246);
@@ -98,8 +115,7 @@ a {
     position: relative;
     margin-top: -30px;
     border-radius: 15px;
-    animation: anime_page_menu linear 1s 1s alternate ;
-    animation-fill-mode: forwards;
+
     .menu{
         background-color: rgb(246, 246, 246);
         display: grid;
@@ -121,21 +137,24 @@ a {
     margin-left: 20px;
     display: grid;
     font-size: 1.6em;
+    &:hover .plein{
+        animation: coeur2 1s ease-in-out 400ms  both;
+        background: $color-degrad;
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-weight: 600;
+        color: transparent;
+    }
     .vide{
         color: black;
-        z-index: 1;
     }
     .plein{
         position: absolute;
-        z-index: 2;
-        transform: scale(1);
-        animation: coeur2 1s ease-in-out 400ms  both;
-        background: text $color-degrad;
-        font-weight: 600;
-        color: transparent;
     } 
 }
-      
+.bloc_menu{
+    animation: anim_menu 1s linear  both;
+}    
 .titre_menu
 {
     border-bottom: 2px solid #99E2D0;
@@ -143,28 +162,77 @@ a {
 }
 .menu article{
     display: grid;
-    grid-template-columns: 1fr 0.1fr ;
-    padding: 10px;
+    grid-template-columns: 1fr 0.1fr 0fr;
+    padding: 0px;
     background-color: white;
     border-radius: 15px;
+    transform: scale(0);
+   animation: anim_carte 1s linear 1s both; 
+   margin: 0px;
+   
     .menu_texte{
+        overflow: hidden;
+        padding: 10px;
+    h3{
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-    }
-    h3{
         margin: 0px;
     }
     p{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
         margin: 0px;
       
     }
-    span{
+}
+}
+    .prix{
         display: flex;
         align-self: flex-end;
         padding-left: 5px;
-    }
-}
+        padding-bottom: 10px;
+        
+      }
+   
+      .check__validation{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+         background-color: $color-tertiary;
+       border-radius: 0px 15px 15px 0px;
+         transition: background-color, 0.5s linear;
+         max-width: 0;
+        
+        
+        &--icone {
+            color: white;
+            font-size: 20px;
+            transition: all 1s linear;
+           
+         }  
+            
+            
+      &:active{
+            max-width: 80px;
+            transition: all 5s linear 1s;
+            margin-right: 50px;
+            transform: rotateZ(360deg);
+            width: 100%;
+            &--icone {
+                transform: rotateZ(360deg);
+            
+            }
+            }
+            
+        
+        }
+       
+     
+    
+
+
 
 /* Boutton commander */
 

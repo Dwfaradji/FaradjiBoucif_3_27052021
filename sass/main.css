@@ -160,13 +160,17 @@ a {
 }
 .menu article .menu_texte {
   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 .menu article h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   margin: 0px;
 }
 .menu article p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   margin: 0px;
 }
 .menu article span {
@@ -387,12 +391,6 @@ h1, p {
   0% {
     transform: scale(0.1);
   }
-  33% {
-    transform: scale(0.3);
-  }
-  66% {
-    transform: scale(0.6);
-  }
   100% {
     transform: scale(1);
   }
@@ -409,6 +407,15 @@ h1, p {
   display: flex;
   font-size: 1.6em;
 }
+.coeur__icone:hover .plein {
+  -webkit-animation: coeur2 1s ease-in-out 400ms both;
+          animation: coeur2 1s ease-in-out 400ms both;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-weight: 600;
+  color: transparent;
+}
 .coeur .vide {
   color: black;
   z-index: 1;
@@ -416,16 +423,6 @@ h1, p {
 .coeur .plein {
   position: absolute;
   z-index: 2;
-  transform: scale(1);
-  -webkit-animation: coeur2 1s ease-in-out 400ms both;
-          animation: coeur2 1s ease-in-out 400ms both;
-  background: text linear-gradient(to bottom, #FF79DA, #9356DC);
-  font-weight: 600;
-  color: transparent;
-}
-.coeur :hover {
-  -webkit-animation: coeur2 1s ease-in-out 400ms both;
-          animation: coeur2 1s ease-in-out 400ms both;
 }
 
 /* Pied de page */

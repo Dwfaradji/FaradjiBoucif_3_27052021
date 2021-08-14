@@ -162,15 +162,7 @@ h1, p
     0% {
         transform: scale(.1);
         
-    }
-    33% {
-        
-        transform: scale(.3);
-    }
-    66% {
-        
-        transform: scale(.6);
-    }
+   }
     100% {
        
         transform: scale(1);
@@ -187,28 +179,23 @@ h1, p
         margin-left: 20px;
         display: flex;
         font-size: 1.6em;
-        :last-child &:hover{
+     &:hover .plein{
             animation: coeur2 1s ease-in-out 400ms  both;
-            background: text $color-degrad;
+            background: $color-degrad;
+            background-clip: text;
+            -webkit-background-clip: text;
             font-weight: 600;
             color: transparent;
       }
       }
      .vide{
             color: black;
-            z-index: 1;
-            animation: coeur2 1s ease-in-out 400ms  both;
-               
-          
-
-                }
-                
+            z-index: 1;           
+          }                          
         .plein  {
             position: absolute;
             z-index: 2;
-           
-       
-           }
+         }
 }
  
 
