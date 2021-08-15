@@ -6,13 +6,30 @@
     transform: scale(1);
   }
 }
+@keyframes anim_menu {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes anim_carte {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 /* Haut de page */
 body {
   margin: 0px;
   padding: 0px;
 }
-
-a {
+body a {
   text-decoration: none;
   color: black;
   display: contents;
@@ -37,11 +54,6 @@ a {
 .header_page .logo img {
   width: 30%;
 }
-.header_page .header_page button {
-  background-color: transparent;
-  border: none;
-  font-size: x-large;
-}
 
 /* Banniere */
 .banniere img {
@@ -51,38 +63,6 @@ a {
 }
 
 /* Carte des menu */
-@keyframes anime_page_menu {
-  0% {
-    margin-top: -30px;
-  }
-  33% {
-    margin-top: -50px;
-  }
-  66% {
-    margin-top: -70px;
-  }
-  100% {
-    margin-top: -90px;
-  }
-}
-@keyframes anim_menu {
-  0% {
-    transform: translateY(10px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-@keyframes anim_carte {
-  0% {
-    transform: scaleY(0);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
 .conteneur_menu {
   background-color: #f6f6f6;
   padding: 15px;
@@ -90,15 +70,7 @@ a {
   margin-top: -30px;
   border-radius: 15px;
 }
-.conteneur_menu .menu {
-  background-color: #f6f6f6;
-  display: grid;
-  gap: 15px;
-  padding: 15px;
-  border-radius: 25px 25px 0px 0px;
-}
-
-.titre_logo {
+.conteneur_menu .titre_logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,31 +82,37 @@ a {
   display: grid;
   font-size: 1.6em;
 }
-.coeur__titre:hover .plein {
-  animation: coeur2 1s ease-in-out 400ms both;
-  background: linear-gradient(to bottom, #FF79DA, #9356DC);
-  background-clip: text;
-  -webkit-background-clip: text;
-  font-weight: 600;
-  color: transparent;
-}
 .coeur__titre .vide {
   color: black;
 }
 .coeur__titre .plein {
   position: absolute;
 }
-
-.bloc_menu {
-  animation: anim_menu 1s linear both;
+.coeur__titre:hover .plein {
+  animation: coeur2 600ms ease-in both;
+  background: linear-gradient(to bottom, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-weight: 600;
+  color: transparent;
 }
 
-.titre_menu {
-  border-bottom: 2px solid #99E2D0;
+.carte {
+  animation: anim_menu 1s linear both;
+}
+.carte .carte__menu {
+  background-color: #f6f6f6;
+  display: grid;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 25px 25px 0px 0px;
+}
+.carte .carte__titre {
+  border-bottom: 2px solid #99e2d0;
   width: 40px;
 }
 
-.menu article {
+.carte article {
   display: grid;
   grid-template-columns: 1fr 0.1fr 0fr;
   padding: 0px;
@@ -144,53 +122,51 @@ a {
   animation: anim_carte 1s linear 1s both;
   margin: 0px;
 }
-.menu article .menu_texte {
+.carte article .carte__texte {
   overflow: hidden;
   padding: 10px;
 }
-.menu article .menu_texte h3 {
+.carte article .carte__texte h3 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   margin: 0px;
 }
-.menu article .menu_texte p {
+.carte article .carte__texte p {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   margin: 0px;
 }
-
-.prix {
+.carte article .carte__prix {
   display: flex;
   align-self: flex-end;
   padding-left: 5px;
   padding-bottom: 10px;
 }
-
-.check__validation {
-  display: flex;
+.carte article .carte__validation {
+  display: grid;
+  grid-column: span 1;
   align-items: center;
   justify-content: center;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   border-radius: 0px 15px 15px 0px;
-  transition: background-color, 0.5s linear;
-  max-width: 0;
+  width: 0px;
+  transition: all 400ms linear 400ms;
 }
-.check__validation--icone {
-  color: white;
+.carte article .carte__validation .icone__validation {
+  color: transparent;
   font-size: 20px;
-  transition: all 1s linear;
+  transition: all 400ms linear 400ms;
 }
-.check__validation:active {
-  max-width: 80px;
-  transition: all 5s linear 1s;
-  margin-right: 50px;
-  transform: rotateZ(360deg);
-  width: 100%;
+.carte article .carte__validation:hover {
+  max-width: 100%;
+  width: 50px;
 }
-.check__validation:active--icone {
+.carte article .carte__validation:hover .icone__validation {
   transform: rotateZ(360deg);
+  color: white;
+  transition: all 400ms linear 400ms;
 }
 
 /* Boutton commander */
@@ -201,7 +177,7 @@ button {
   margin-top: 10px;
   margin-bottom: 10px;
   border: none;
-  background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+  background-image: linear-gradient(to bottom, #ff79da, #9356dc);
   opacity: 0.8;
   color: white;
 }
@@ -235,18 +211,18 @@ footer a {
     display: grid;
   }
 
-  .bloc_menu {
+  .carte {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     gap: 15px;
   }
 
-  .titre_menu {
+  .carte__titre {
     height: 20px;
   }
 
-  .menu {
+  .carte__menu {
     align-content: flex-start;
   }
 
@@ -421,7 +397,7 @@ h1, p {
   font-size: 1.6em;
 }
 .coeur__icone:hover .plein {
-  animation: coeur2 1s ease-in-out 400ms both;
+  animation: coeur2 600ms linear alternate both;
   background: linear-gradient(to bottom, #FF79DA, #9356DC);
   background-clip: text;
   -webkit-background-clip: text;
@@ -431,10 +407,12 @@ h1, p {
 .coeur .vide {
   color: black;
   z-index: 1;
+  cursor: pointer;
 }
 .coeur .plein {
   position: absolute;
   z-index: 2;
+  cursor: pointer;
 }
 
 /* Pied de page */

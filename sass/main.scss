@@ -7,6 +7,39 @@ $color-fond-primary:rgb(246, 246, 246);
 $color-fond-secondary:rgb(234, 234, 234);
 $color-degrad:linear-gradient(to bottom, $color-secondary, $color-primary);
 $color: #d06adb;
+@mixin anim_coeur 
+{
+    .coeur_titre
+    {
+       font-size: 1.1em;
+       display: grid;
+       justify-content: center;
+       align-items: center;
+       &__icone {
+          color: black;
+          margin-left: 20px;
+          display: flex;
+          font-size: 1.6em;
+       &:hover .plein{
+              animation: coeur2 1s ease-in-out 400ms  both;
+              background: $color-degrad;
+              background-clip: text;
+              -webkit-background-clip: text;
+              font-weight: 600;
+              color: transparent;
+        }
+        }
+       .vide{
+              color: black;
+              z-index: 1;           
+            }                          
+          .plein  {
+              position: absolute;
+              z-index: 2;
+           }
+  }
+     
+}
 
 
 @function pastel($clr) {
@@ -180,21 +213,24 @@ h1, p
         display: flex;
         font-size: 1.6em;
      &:hover .plein{
-            animation: coeur2 1s ease-in-out 400ms  both;
+            animation: coeur2 600ms linear  alternate both ;
             background: $color-degrad;
             background-clip: text;
             -webkit-background-clip: text;
             font-weight: 600;
             color: transparent;
+          
       }
       }
      .vide{
             color: black;
-            z-index: 1;           
+            z-index: 1;    
+            cursor: pointer;       
           }                          
         .plein  {
             position: absolute;
             z-index: 2;
+            cursor: pointer;   
          }
 }
  

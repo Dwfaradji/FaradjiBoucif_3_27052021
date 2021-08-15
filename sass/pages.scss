@@ -1,92 +1,22 @@
-$color-primary:#9356DC;
-$color-secondary:#FF79DA;
-$color-tertiary:#99E2D0;
-$color-fond-primary:rgb(246, 246, 246);
-$color-fond-secondary:rgb(234, 234, 234);
-$color-degrad:linear-gradient(to bottom, $color-secondary, $color-primary);
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-tertiary: #99e2d0;
+$color-fond-primary: rgb(246, 246, 246);
+$color-fond-secondary: rgb(234, 234, 234);
+$color-degrad: linear-gradient(to bottom, $color-secondary, $color-primary);
 $color: #d06adb;
-
-
 
 @keyframes coeur2 {
     0% {
-        transform: scale(.1);      
+        transform: scale(0.1);
     }
-  
+
     100% {
-       
         transform: scale(1);
     }
-  }
-/* Haut de page */
-
-body{
-    margin: 0px;
-    padding: 0px;
-}
-a {
-    text-decoration: none;
-    color: black;
-    display: contents;
 }
 
-.header_page
-{
-    display: grid;
-    grid-template-columns: 0fr 1fr ;
-    justify-content: center;
-    align-items: center;
-    .retour{
-        font-size: x-large;
-        color: black;
-        padding: 15px;
-    }
-    .logo
-    {
-        display: flex;
-        justify-content: center;
-        padding: 10px;
-    img{
-        width: 30%;
-    }
-    }
-    .header_page button{
-        background-color: transparent;
-        border: none;
-        font-size: x-large;
-    }
-}
-/* Banniere */
-
-.banniere img
-{
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-/* Carte des menu */
-
-@keyframes anime_page_menu {
-    0% {
-        
-        margin-top:-30px;
-    }
-    33% {
-        
-        margin-top:-50px;
-    }
-    66% {
-       
-        margin-top:-70px;
-    }
-    100% {
-        margin-top:-90px;
-       
-    }
-  }
-
-  
-  @keyframes anim_menu {
+@keyframes anim_menu {
     0% {
         transform: translateY(10px);
         opacity: 0;
@@ -97,208 +27,224 @@ a {
     }
 }
 
-@keyframes anim_carte{
+@keyframes anim_carte {
     0% {
         transform: scaleY(0);
-       
     }
     100% {
         transform: scaleY(1);
-        
     }
 }
+/* Haut de page */
 
-  .conteneur_menu
-  {
+body {
+    margin: 0px;
+    padding: 0px;
+    a {
+        text-decoration: none;
+        color: black;
+        display: contents;
+    }
+}
+.header_page {
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    justify-content: center;
+    align-items: center;
+    .retour {
+        font-size: x-large;
+        color: black;
+        padding: 15px;
+    }
+    .logo {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        img {
+            width: 30%;
+        }
+    }
+}
+/* Banniere */
+
+.banniere img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+/* Carte des menu */
+
+.conteneur_menu {
     background-color: rgb(246, 246, 246);
     padding: 15px;
     position: relative;
     margin-top: -30px;
     border-radius: 15px;
-
-    .menu{
-        background-color: rgb(246, 246, 246);
-        display: grid;
-        gap: 15px;
-        padding: 15px;
-        border-radius: 25px 25px 0px 0px;
-    }  
+    .titre_logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
-.titre_logo 
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.coeur__titre 
-{
+.coeur__titre {
     color: black;
     margin-left: 20px;
     display: grid;
     font-size: 1.6em;
-    &:hover .plein{
-        animation: coeur2 1s ease-in-out 400ms  both;
+    .vide {
+        color: black;
+    }
+    .plein {
+        position: absolute;
+    }
+    &:hover .plein {
+        animation: coeur2 600ms ease-in both;
         background: $color-degrad;
         background-clip: text;
         -webkit-background-clip: text;
         font-weight: 600;
         color: transparent;
     }
-    .vide{
-        color: black;
+}
+.carte {
+    animation: anim_menu 1s linear both;
+
+    .carte__menu {
+        background-color: rgb(246, 246, 246);
+        display: grid;
+        gap: 15px;
+        padding: 15px;
+        border-radius: 25px 25px 0px 0px;
     }
-    .plein{
-        position: absolute;
-    } 
+    .carte__titre {
+        border-bottom: 2px solid #99e2d0;
+        width: 40px;
+    }
 }
-.bloc_menu{
-    animation: anim_menu 1s linear  both;
-}    
-.titre_menu
-{
-    border-bottom: 2px solid #99E2D0;
-    width: 40px;
-}
-.menu article{
+.carte article {
     display: grid;
     grid-template-columns: 1fr 0.1fr 0fr;
     padding: 0px;
     background-color: white;
     border-radius: 15px;
     transform: scale(0);
-   animation: anim_carte 1s linear 1s both; 
-   margin: 0px;
-   
-    .menu_texte{
+    animation: anim_carte 1s linear 1s both;
+    margin: 0px;
+
+    .carte__texte {
         overflow: hidden;
         padding: 10px;
-    h3{
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        margin: 0px;
+        h3 {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin: 0px;
+        }
+        p {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin: 0px;
+        }
     }
-    p{
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        margin: 0px;
-      
-    }
-}
-}
-    .prix{
+
+    .carte__prix {
         display: flex;
         align-self: flex-end;
         padding-left: 5px;
         padding-bottom: 10px;
-        
-      }
-   
-      .check__validation{
-        display: flex;
+    }
+
+    .carte__validation {
+        display: grid;
+        grid-column: span 1;
         align-items: center;
         justify-content: center;
-         background-color: $color-tertiary;
-       border-radius: 0px 15px 15px 0px;
-         transition: background-color, 0.5s linear;
-         max-width: 0;
-        
-        
-        &--icone {
-            color: white;
+        background-color: $color-tertiary;
+        border-radius: 0px 15px 15px 0px;
+        width: 0px;
+        transition: all 400ms linear 400ms;
+        .icone__validation {
+            color: transparent;
             font-size: 20px;
-            transition: all 1s linear;
-           
-         }  
-            
-            
-      &:active{
-            max-width: 80px;
-            transition: all 5s linear 1s;
-            margin-right: 50px;
-            transform: rotateZ(360deg);
-            width: 100%;
-            &--icone {
-                transform: rotateZ(360deg);
-            
-            }
-            }
-            
-        
+            transition: all 400ms linear 400ms;
         }
-       
-     
-    
 
+        &:hover {
+            max-width: 100%;
+            width: 50px;
 
+            .icone__validation {
+                transform: rotateZ(360deg);
+                color: white;
+                transition: all 400ms linear 400ms;
+            }
+        }
+    }
+}
 
 /* Boutton commander */
 
-button{
-    border-radius: 25px ;
+button {
+    border-radius: 25px;
     width: 150px;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     border: none;
-    background-image:linear-gradient(to bottom,  #FF79DA, #9356DC);
+    background-image: linear-gradient(to bottom, #ff79da, #9356dc);
     opacity: 0.8;
     color: white;
-    .boutton{
+    .boutton {
         display: flex;
         justify-content: center;
     }
 }
 /* pied de page */
-footer
-{
+footer {
     background-color: rgb(39, 38, 38);
-    color:white;
+    color: white;
     padding: 20px;
-    li{
+    li {
         display: grid;
-        grid-template-columns: 25px 1fr ;
+        grid-template-columns: 25px 1fr;
     }
-    ul{
+    ul {
         padding: 0px;
     }
-    a{
+    a {
         color: white;
     }
 }
 
 /*media tablette*/
-@media screen and (min-width:600px)
-{
-    .boutton{
+@media screen and (min-width: 600px) {
+    .boutton {
         grid-column: 2;
         justify-content: center;
         display: grid;
     }
-    .bloc_menu{
+    .carte {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         justify-content: center;
         gap: 15px;
-    } 
-    .titre_menu{
+    }
+    .carte__titre {
         height: 20px;
-    }  
-    .menu{
+    }
+    .carte__menu {
         align-content: flex-start;
     }
-    .conteneur_menu{
-        border-radius: 15px 15px 0px 0px ;
+    .conteneur_menu {
+        border-radius: 15px 15px 0px 0px;
     }
-    footer ul{
+    footer ul {
         display: grid;
-        grid-template-columns: 1fr 1fr ;
-    } 
-    .fonctionement nav ol{
+        grid-template-columns: 1fr 1fr;
+    }
+    .fonctionement nav ol {
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
-    }  
+    }
 }
-
