@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @keyframes coeur2 {
   0% {
     transform: scale(0.1);
@@ -121,6 +122,46 @@ body a {
   transform: scale(0);
   animation: anim_carte 1s linear 1s both;
   margin: 0px;
+  /*.carte__validation {
+      display: grid;
+      grid-column: span 1;
+      align-items: center;
+      justify-content: center;
+      background-color: $color-tertiary;
+      border-radius: 0px 15px 15px 0px;
+      width: 0px;
+      transition: all 400ms linear 400ms;
+      .icone__validation {
+          color: transparent;
+          font-size: 20px;
+          transition: all 400ms linear 400ms;
+      }
+
+
+  }*/
+}
+.carte article .carte__validation {
+  display: flex;
+  grid-column: span 1;
+  align-items: center;
+  justify-content: center;
+  background-color: #99e2d0;
+  border-radius: 0px 15px 15px 0px;
+  width: 0px;
+  transition: all 400ms linear 400ms;
+}
+.carte article .carte__validation .icone__validation {
+  color: transparent;
+  font-size: 20px;
+  transition: all 400ms linear 400ms;
+}
+.carte article:hover .carte__validation {
+  width: 80px;
+}
+.carte article:hover .carte__validation .icone__validation {
+  transform: rotateZ(360deg);
+  color: white;
+  transition: all 400ms linear 400ms;
 }
 .carte article .carte__texte {
   overflow: hidden;
@@ -143,30 +184,6 @@ body a {
   align-self: flex-end;
   padding-left: 5px;
   padding-bottom: 10px;
-}
-.carte article .carte__validation {
-  display: grid;
-  grid-column: span 1;
-  align-items: center;
-  justify-content: center;
-  background-color: #99e2d0;
-  border-radius: 0px 15px 15px 0px;
-  width: 0px;
-  transition: all 400ms linear 400ms;
-}
-.carte article .carte__validation .icone__validation {
-  color: transparent;
-  font-size: 20px;
-  transition: all 400ms linear 400ms;
-}
-.carte article .carte__validation:hover {
-  max-width: 100%;
-  width: 50px;
-}
-.carte article .carte__validation:hover .icone__validation {
-  transform: rotateZ(360deg);
-  color: white;
-  transition: all 400ms linear 400ms;
 }
 
 /* Boutton commander */
@@ -452,6 +469,98 @@ footer a {
 @media screen and (min-width: 1200px) {
   .bloc_restaurants {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+/* Chargement Page Principale */
+.animation__loading__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: cssAnimation 0s 20s forwards;
+  visibility: visible;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  opacity: 0.8;
+  z-index: 15;
+}
+
+/* Logo OhMyFood centré */
+.animation__loading__container--logospinner {
+  font-size: 2rem;
+  font-family: sans-serif;
+  color: black;
+  position: absolute;
+  animation: anim_logo 2s linear infinite alternate-reverse;
+}
+
+/* Animation sous forme de lignes circulaires */
+/* Ligne circulaire violette */
+.animation__loading__container--spinner {
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top: 5px double #9356DC;
+  animation: spin 2s linear infinite;
+}
+
+.animation__loading__container--spinner::before,
+.animation__loading__container--spinner::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 5px solid transparent;
+}
+
+/* Ligne circulaire rose */
+.animation__loading__container--spinner::before {
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-top-color: #FF79DA;
+  animation: spin 1.8s linear infinite;
+}
+
+/* Ligne circulaire vert clair */
+.animation__loading__container--spinner::after {
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-top-color: #99E2D0;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes cssAnimation {
+  to {
+    visibility: hidden;
+    display: none;
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes anim_logo {
+  from {
+    transform: rotate(10deg) skewX(50deg);
+    color: #d06adb;
+  }
+  to {
+    transform: rotate(-10deg);
   }
 }
 

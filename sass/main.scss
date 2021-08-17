@@ -274,3 +274,119 @@ footer
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 } 
+
+/* Chargement Page Principale */
+
+.animation__loading__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: cssAnimation 0s 20s forwards;
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    opacity:0.8;
+    z-index:15;
+}
+
+
+/* Logo OhMyFood centré */
+
+.animation__loading__container--logospinner {
+    font-size: 2rem;
+    font-family: sans-serif;
+    color: black;
+    position: absolute;
+    
+    animation: anim_logo 2s linear infinite alternate-reverse;
+
+   
+}
+
+
+/* Animation sous forme de lignes circulaires */
+
+
+/* Ligne circulaire violette */
+.animation__loading__container--spinner {
+    display: block;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top: 5px double $color-primary;
+    animation: spin 2s linear infinite;
+}
+
+.animation__loading__container--spinner::before,
+.animation__loading__container--spinner::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    
+}
+
+
+/* Ligne circulaire rose */
+
+
+.animation__loading__container--spinner::before {
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-top-color: $color-secondary;
+    animation: spin 1.8s linear infinite;
+}
+
+
+/* Ligne circulaire vert clair */
+
+.animation__loading__container--spinner::after {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border-top-color: $color-tertiary;
+        animation: spin 1s linear  infinite;
+}
+
+@keyframes cssAnimation {
+    to {
+        visibility: hidden;
+        display: none
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg) ;
+      
+     
+    }
+  
+    
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        
+    }
+
+}
+@keyframes anim_logo {
+    from{
+        transform: rotate(10deg) skewX(50deg);
+        color: $color;
+        
+    }
+    to{
+        transform: rotate(-10deg);
+    }
+}

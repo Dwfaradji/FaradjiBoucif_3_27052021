@@ -151,6 +151,46 @@ body a {
   -webkit-animation: anim_carte 1s linear 1s both;
           animation: anim_carte 1s linear 1s both;
   margin: 0px;
+  /*.carte__validation {
+      display: grid;
+      grid-column: span 1;
+      align-items: center;
+      justify-content: center;
+      background-color: $color-tertiary;
+      border-radius: 0px 15px 15px 0px;
+      width: 0px;
+      transition: all 400ms linear 400ms;
+      .icone__validation {
+          color: transparent;
+          font-size: 20px;
+          transition: all 400ms linear 400ms;
+      }
+
+
+  }*/
+}
+.carte article .carte__validation {
+  display: flex;
+  grid-column: span 1;
+  align-items: center;
+  justify-content: center;
+  background-color: #99e2d0;
+  border-radius: 0px 15px 15px 0px;
+  width: 0px;
+  transition: all 400ms linear 400ms;
+}
+.carte article .carte__validation .icone__validation {
+  color: transparent;
+  font-size: 20px;
+  transition: all 400ms linear 400ms;
+}
+.carte article:hover .carte__validation {
+  width: 80px;
+}
+.carte article:hover .carte__validation .icone__validation {
+  transform: rotateZ(360deg);
+  color: white;
+  transition: all 400ms linear 400ms;
 }
 .carte article .carte__texte {
   overflow: hidden;
@@ -173,30 +213,6 @@ body a {
   align-self: flex-end;
   padding-left: 5px;
   padding-bottom: 10px;
-}
-.carte article .carte__validation {
-  display: grid;
-  grid-column: span 1;
-  align-items: center;
-  justify-content: center;
-  background-color: #99e2d0;
-  border-radius: 0px 15px 15px 0px;
-  width: 0px;
-  transition: all 400ms linear 400ms;
-}
-.carte article .carte__validation .icone__validation {
-  color: transparent;
-  font-size: 20px;
-  transition: all 400ms linear 400ms;
-}
-.carte article .carte__validation:hover {
-  max-width: 100%;
-  width: 50px;
-}
-.carte article .carte__validation:hover .icone__validation {
-  transform: rotateZ(360deg);
-  color: white;
-  transition: all 400ms linear 400ms;
 }
 
 /* Boutton commander */

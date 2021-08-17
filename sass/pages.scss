@@ -56,6 +56,7 @@ body {
         color: black;
         padding: 15px;
     }
+ 
     .logo {
         display: flex;
         justify-content: center;
@@ -130,7 +131,34 @@ body {
     transform: scale(0);
     animation: anim_carte 1s linear 1s both;
     margin: 0px;
+    .carte__validation 
+        {
+        display: flex;
+        grid-column: span 1;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-tertiary;
+        border-radius: 0px 15px 15px 0px;
+        width: 0px;
+        transition: all 400ms linear 400ms;
+        .icone__validation {
+            color: transparent;
+            font-size: 20px;
+            transition: all 400ms linear 400ms;
+        }
 
+       
+    }
+    &:hover .carte__validation{
+        
+        width: 80px;
+        
+        .icone__validation {
+            transform: rotateZ(360deg);
+            color: white;
+            transition: all 400ms linear 400ms;
+        }
+        }
     .carte__texte {
         overflow: hidden;
         padding: 10px;
@@ -155,7 +183,7 @@ body {
         padding-bottom: 10px;
     }
 
-    .carte__validation {
+    /*.carte__validation {
         display: grid;
         grid-column: span 1;
         align-items: center;
@@ -170,17 +198,8 @@ body {
             transition: all 400ms linear 400ms;
         }
 
-        &:hover {
-            max-width: 100%;
-            width: 50px;
-
-            .icone__validation {
-                transform: rotateZ(360deg);
-                color: white;
-                transition: all 400ms linear 400ms;
-            }
-        }
-    }
+       
+    }*/
 }
 
 /* Boutton commander */
@@ -248,3 +267,6 @@ footer {
         gap: 20px;
     }
 }
+
+
+

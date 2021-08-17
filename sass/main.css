@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @-webkit-keyframes coeur2 {
   0% {
     transform: scale(0.1);
@@ -12,6 +13,42 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+@-webkit-keyframes anim_menu {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes anim_menu {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes anim_carte {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes anim_carte {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
   }
 }
 /* Haut de page */
@@ -54,70 +91,6 @@ body a {
 }
 
 /* Carte des menu */
-@-webkit-keyframes anime_page_menu {
-  0% {
-    margin-top: -30px;
-  }
-  33% {
-    margin-top: -50px;
-  }
-  66% {
-    margin-top: -70px;
-  }
-  100% {
-    margin-top: -90px;
-  }
-}
-@keyframes anime_page_menu {
-  0% {
-    margin-top: -30px;
-  }
-  33% {
-    margin-top: -50px;
-  }
-  66% {
-    margin-top: -70px;
-  }
-  100% {
-    margin-top: -90px;
-  }
-}
-@-webkit-keyframes anim_menu {
-  0% {
-    transform: translateY(10px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-@keyframes anim_menu {
-  0% {
-    transform: translateY(10px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes anim_carte {
-  0% {
-    transform: scaleY(0);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
-@keyframes anim_carte {
-  0% {
-    transform: scaleY(0);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
 .conteneur_menu {
   background-color: #f6f6f6;
   padding: 15px;
@@ -144,8 +117,8 @@ body a {
   position: absolute;
 }
 .coeur__titre:hover .plein {
-  -webkit-animation: coeur2 1s ease-in-out 400ms both;
-          animation: coeur2 1s ease-in-out 400ms both;
+  -webkit-animation: coeur2 600ms ease-in both;
+          animation: coeur2 600ms ease-in both;
   background: linear-gradient(to bottom, #ff79da, #9356dc);
   background-clip: text;
   -webkit-background-clip: text;
@@ -512,5 +485,123 @@ footer a {
 @media screen and (min-width: 1200px) {
   .bloc_restaurants {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+/* Chargement Page Principale */
+.animation__loading__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-animation: cssAnimation 0s 20s forwards;
+          animation: cssAnimation 0s 20s forwards;
+  visibility: visible;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  opacity: 0.8;
+  z-index: 15;
+}
+
+/* Logo OhMyFood centré */
+.animation__loading__container--logospinner {
+  font-size: 2rem;
+  font-family: sans-serif;
+  color: black;
+  position: absolute;
+  animation: anim_logo 2s linear infinite alternate-reverse;
+}
+
+/* Animation sous forme de lignes circulaires */
+/* Ligne circulaire violette */
+.animation__loading__container--spinner {
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top: 5px double #9356DC;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+}
+
+.animation__loading__container--spinner::before,
+.animation__loading__container--spinner::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 5px solid transparent;
+}
+
+/* Ligne circulaire rose */
+.animation__loading__container--spinner::before {
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-top-color: #FF79DA;
+  -webkit-animation: spin 1.8s linear infinite;
+          animation: spin 1.8s linear infinite;
+}
+
+/* Ligne circulaire vert clair */
+.animation__loading__container--spinner::after {
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-top-color: #99E2D0;
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes cssAnimation {
+  to {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+@keyframes cssAnimation {
+  to {
+    visibility: hidden;
+    display: none;
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes anim_logo {
+  from {
+    transform: rotate(10deg) skewX(50deg);
+    color: #d06adb;
+  }
+  to {
+    transform: rotate(-10deg);
+  }
+}
+@keyframes anim_logo {
+  from {
+    transform: rotate(10deg) skewX(50deg);
+    color: #d06adb;
+  }
+  to {
+    transform: rotate(-10deg);
   }
 }/*# sourceMappingURL=main.css.map */
