@@ -1,3 +1,28 @@
+@font-face {
+  font-family: shrikhand;
+  src: url(/font/Shrikhand/Shrikhand-Regular.otf);
+}
+@font-face {
+  font-family: roboto;
+  src: url(/font/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: roboto-bold;
+  src: url(/font/Roboto/Roboto-Bold.ttf);
+}
+footer h2 {
+  font-family: "shrikhand", sans-serif;
+}
+
+span, p {
+  font-family: "roboto";
+  font-weight: lighter;
+}
+
+h3 {
+  font-family: "roboto-bold";
+}
+
 @-webkit-keyframes coeur2 {
   0% {
     transform: scale(0.1);
@@ -6,6 +31,7 @@
     transform: scale(1);
   }
 }
+
 @keyframes coeur2 {
   0% {
     transform: scale(0.1);
@@ -75,10 +101,10 @@ body a {
 .header_page .logo {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  margin-right: 35px;
 }
 .header_page .logo img {
-  width: 30%;
+  width: 45%;
 }
 
 /* Banniere */
@@ -101,6 +127,7 @@ body a {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "shrikhand";
 }
 
 .coeur__titre {
@@ -216,7 +243,11 @@ body a {
 }
 
 /* Boutton commander */
-button {
+.boutton {
+  display: flex;
+  justify-content: center;
+}
+.boutton button {
   border-radius: 25px;
   width: 150px;
   padding: 10px;
@@ -226,10 +257,8 @@ button {
   background-image: linear-gradient(to bottom, #ff79da, #9356dc);
   opacity: 0.8;
   color: white;
-}
-button .boutton {
-  display: flex;
-  justify-content: center;
+  font-weight: bold;
+  font-size: 1em;
 }
 
 /* pied de page */

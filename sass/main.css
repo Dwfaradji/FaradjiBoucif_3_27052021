@@ -1,4 +1,29 @@
 @charset "UTF-8";
+@font-face {
+  font-family: shrikhand;
+  src: url(/font/Shrikhand/Shrikhand-Regular.otf);
+}
+@font-face {
+  font-family: roboto;
+  src: url(/font/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: roboto-bold;
+  src: url(/font/Roboto/Roboto-Bold.ttf);
+}
+footer h2 {
+  font-family: "shrikhand", sans-serif;
+}
+
+span, p {
+  font-family: "roboto";
+  font-weight: lighter;
+}
+
+h3 {
+  font-family: "roboto-bold";
+}
+
 @-webkit-keyframes coeur2 {
   0% {
     transform: scale(0.1);
@@ -7,6 +32,7 @@
     transform: scale(1);
   }
 }
+
 @keyframes coeur2 {
   0% {
     transform: scale(0.1);
@@ -76,10 +102,10 @@ body a {
 .header_page .logo {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  margin-right: 35px;
 }
 .header_page .logo img {
-  width: 30%;
+  width: 45%;
 }
 
 /* Banniere */
@@ -102,6 +128,7 @@ body a {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "shrikhand";
 }
 
 .coeur__titre {
@@ -152,6 +179,46 @@ body a {
   -webkit-animation: anim_carte 1s linear 1s both;
           animation: anim_carte 1s linear 1s both;
   margin: 0px;
+  /*.carte__validation {
+      display: grid;
+      grid-column: span 1;
+      align-items: center;
+      justify-content: center;
+      background-color: $color-tertiary;
+      border-radius: 0px 15px 15px 0px;
+      width: 0px;
+      transition: all 400ms linear 400ms;
+      .icone__validation {
+          color: transparent;
+          font-size: 20px;
+          transition: all 400ms linear 400ms;
+      }
+
+
+  }*/
+}
+.carte article .carte__validation {
+  display: flex;
+  grid-column: span 1;
+  align-items: center;
+  justify-content: center;
+  background-color: #99e2d0;
+  border-radius: 0px 15px 15px 0px;
+  width: 0px;
+  transition: all 400ms linear 400ms;
+}
+.carte article .carte__validation .icone__validation {
+  color: transparent;
+  font-size: 20px;
+  transition: all 400ms linear 400ms;
+}
+.carte article:hover .carte__validation {
+  width: 80px;
+}
+.carte article:hover .carte__validation .icone__validation {
+  transform: rotateZ(360deg);
+  color: white;
+  transition: all 400ms linear 400ms;
 }
 .carte article .carte__texte {
   overflow: hidden;
@@ -175,33 +242,13 @@ body a {
   padding-left: 5px;
   padding-bottom: 10px;
 }
-.carte article .carte__validation {
-  display: grid;
-  grid-column: span 1;
-  align-items: center;
-  justify-content: center;
-  background-color: #99e2d0;
-  border-radius: 0px 15px 15px 0px;
-  width: 0px;
-  transition: all 400ms linear 400ms;
-}
-.carte article .carte__validation .icone__validation {
-  color: transparent;
-  font-size: 20px;
-  transition: all 400ms linear 400ms;
-}
-.carte article .carte__validation:hover {
-  max-width: 100%;
-  width: 50px;
-}
-.carte article .carte__validation:hover .icone__validation {
-  transform: rotateZ(360deg);
-  color: white;
-  transition: all 400ms linear 400ms;
-}
 
 /* Boutton commander */
-button {
+.boutton {
+  display: flex;
+  justify-content: center;
+}
+.boutton button {
   border-radius: 25px;
   width: 150px;
   padding: 10px;
@@ -211,10 +258,8 @@ button {
   background-image: linear-gradient(to bottom, #ff79da, #9356dc);
   opacity: 0.8;
   color: white;
-}
-button .boutton {
-  display: flex;
-  justify-content: center;
+  font-weight: bold;
+  font-size: 1em;
 }
 
 /* pied de page */
@@ -271,6 +316,31 @@ footer a {
     gap: 20px;
   }
 }
+@font-face {
+  font-family: shrikhand;
+  src: url(/font/Shrikhand/Shrikhand-Regular.otf);
+}
+@font-face {
+  font-family: roboto;
+  src: url(/font/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: roboto-bold;
+  src: url(/font/Roboto/Roboto-Bold.ttf);
+}
+footer h2 {
+  font-family: "shrikhand", sans-serif;
+}
+
+span, p {
+  font-family: "roboto";
+  font-weight: lighter;
+}
+
+h2, h3 {
+  font-family: "roboto-bold";
+}
+
 /*haut de page*/
 body {
   margin: 0px;
@@ -288,19 +358,34 @@ a {
   padding: 10px;
 }
 .logo img {
-  width: 30%;
+  width: 40%;
 }
 
 /* Barre de Recherche */
 form {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: #eaeaea;
   padding: 10px;
+  border-top: 1px inset #ffffff;
+}
+form label {
+  font-size: small;
+  margin-right: 10px;
 }
 form input {
   border: none;
-  background-color: #eaeaea;
+  background-color: transparent;
+}
+form input ::-moz-placeholder {
+  color: black;
+}
+form input :-ms-input-placeholder {
+  color: black;
+}
+form input ::placeholder {
+  color: black;
 }
 
 /* Titre */
@@ -317,14 +402,14 @@ form input {
   border: none;
   padding: 10px;
   color: white;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 h1, p {
   display: grid;
   justify-content: center;
   grid-template-columns: 70%;
-  margin: 0px;
-  padding: 10px;
 }
 
 /* Navigation */
@@ -397,6 +482,13 @@ h1, p {
   width: 100%;
   height: 150px;
   border-radius: 15px 15px 0px 0px;
+}
+.conteneur_restaurants .etiquette_nouveau {
+  background-color: #99E2D0;
+  color: white;
+  position: absolute;
+  margin-top: 10px;
+  padding: 5px 10px 5px 10px;
 }
 
 .carte_texte {
@@ -492,8 +584,8 @@ footer a {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-animation: cssAnimation 0s 20s forwards;
-          animation: cssAnimation 0s 20s forwards;
+  -webkit-animation: cssAnimation 0s 1s forwards;
+          animation: cssAnimation 0s 1s forwards;
   visibility: visible;
   position: fixed;
   top: 0;
@@ -507,11 +599,10 @@ footer a {
 
 /* Logo OhMyFood centré */
 .animation__loading__container--logospinner {
-  font-size: 2rem;
-  font-family: sans-serif;
+  font-size: 1.8rem;
+  font-family: "shrikhand";
   color: black;
   position: absolute;
-  animation: anim_logo 2s linear infinite alternate-reverse;
 }
 
 /* Animation sous forme de lignes circulaires */
@@ -519,8 +610,8 @@ footer a {
 .animation__loading__container--spinner {
   display: block;
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   border: 5px solid transparent;
   border-top: 5px double #9356DC;

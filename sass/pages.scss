@@ -6,6 +6,38 @@ $color-fond-secondary: rgb(234, 234, 234);
 $color-degrad: linear-gradient(to bottom, $color-secondary, $color-primary);
 $color: #d06adb;
 
+
+
+@font-face {
+    font-family: shrikhand;
+    src: url(/font/Shrikhand/Shrikhand-Regular.otf);
+        
+}
+@font-face {
+    font-family: roboto;
+       src:  url(/font/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: roboto-bold;
+    src: url(/font/Roboto/Roboto-Bold.ttf);
+}
+footer h2{
+font-family: 'shrikhand', sans-serif;
+
+}
+span, p{
+font-family: 'roboto' ;
+font-weight: lighter;
+
+}
+ h3{
+font-family: 'roboto-bold';
+
+}
+
+
+
+
 @keyframes coeur2 {
     0% {
         transform: scale(0.1);
@@ -60,9 +92,10 @@ body {
     .logo {
         display: flex;
         justify-content: center;
-        padding: 10px;
+       
+        margin-right: 35px;
         img {
-            width: 30%;
+            width: 45%;
         }
     }
 }
@@ -75,6 +108,7 @@ body {
 }
 /* Carte des menu */
 
+
 .conteneur_menu {
     background-color: rgb(246, 246, 246);
     padding: 15px;
@@ -85,13 +119,16 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        font-family: 'shrikhand';
     }
+    
 }
 .coeur__titre {
     color: black;
     margin-left: 20px;
     display: grid;
     font-size: 1.6em;
+    
     .vide {
         color: black;
     }
@@ -146,8 +183,6 @@ body {
             font-size: 20px;
             transition: all 400ms linear 400ms;
         }
-
-       
     }
     &:hover .carte__validation{
         
@@ -204,7 +239,10 @@ body {
 
 /* Boutton commander */
 
-button {
+.boutton {
+    display: flex;
+    justify-content: center;
+    button {
     border-radius: 25px;
     width: 150px;
     padding: 10px;
@@ -214,9 +252,8 @@ button {
     background-image: linear-gradient(to bottom, #ff79da, #9356dc);
     opacity: 0.8;
     color: white;
-    .boutton {
-        display: flex;
-        justify-content: center;
+    font-weight: bold;
+    font-size: 1em;
     }
 }
 /* pied de page */

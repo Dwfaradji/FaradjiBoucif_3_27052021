@@ -1,5 +1,35 @@
 @import "./pages.scss";
 
+    @font-face {
+        font-family: shrikhand;
+        src: url(/font/Shrikhand/Shrikhand-Regular.otf);
+            
+    }
+    @font-face {
+        font-family: roboto;
+           src:  url(/font/Roboto/Roboto-Light.ttf);
+    }
+    @font-face {
+        font-family: roboto-bold;
+        src: url(/font/Roboto/Roboto-Bold.ttf);
+    }
+footer h2{
+    font-family: 'shrikhand', sans-serif;
+   
+}
+span, p{
+    font-family: 'roboto' ;
+    font-weight: lighter;
+    
+}
+h2, h3{
+    font-family: 'roboto-bold';
+    
+}
+
+
+
+
 $color-primary:#9356DC;
 $color-secondary:#FF79DA;
 $color-tertiary:#99E2D0;
@@ -67,7 +97,7 @@ a
     justify-content: center;
     padding: 10px;
     img{
-        width: 30%;
+        width: 40%;
     }
 }
 /* Barre de Recherche */
@@ -75,12 +105,21 @@ form
 {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: $color-fond-secondary;
     padding: 10px;
-
+    border-top: 1px inset #ffffff;
+    label{
+        font-size: small;
+        margin-right: 10px;
+    }
     input{
         border: none;
-        background-color: $color-fond-secondary;
+        background-color: transparent;
+        
+        ::placeholder{
+            color: black;
+        }
     }
 }
 /* Titre */
@@ -99,6 +138,8 @@ form
         border:none;
         padding: 10px;
         color: white;
+        margin-top: 15px;
+        font-weight: bold;
     }
 }
 h1, p 
@@ -106,8 +147,7 @@ h1, p
     display: grid;
     justify-content: center;
     grid-template-columns: 70%;
-    margin: 0px;
-    padding: 10px;
+  
 }
 /* Navigation */
     
@@ -181,6 +221,15 @@ h1, p
         height: 150px;
         border-radius: 15px 15px 0px 0px;
     }
+        .etiquette_nouveau{
+            background-color: $color-tertiary;
+            color: white;
+            position: absolute;
+            
+            margin-top: 10px;
+            padding: 5px 10px 5px 10px;
+        }
+   
 }
 .carte_texte
 {
@@ -281,7 +330,7 @@ footer
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: cssAnimation 0s 20s forwards;
+    animation: cssAnimation 0s 1s forwards;
     visibility: visible;
     position: fixed;
     top: 0;
@@ -297,12 +346,12 @@ footer
 /* Logo OhMyFood centré */
 
 .animation__loading__container--logospinner {
-    font-size: 2rem;
-    font-family: sans-serif;
+    font-size: 1.8rem;
+    font-family: 'shrikhand';
     color: black;
     position: absolute;
     
-    animation: anim_logo 2s linear infinite alternate-reverse;
+   
 
    
 }
@@ -315,8 +364,8 @@ footer
 .animation__loading__container--spinner {
     display: block;
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 5px solid transparent;
     border-top: 5px double $color-primary;
