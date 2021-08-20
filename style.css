@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: shrikhand;
   src: url(/font/Shrikhand/Shrikhand-Regular.otf);
@@ -15,7 +14,8 @@ footer h2 {
   font-family: "shrikhand", sans-serif;
 }
 
-span, p {
+span,
+p {
   font-family: "roboto";
   font-weight: lighter;
 }
@@ -148,23 +148,6 @@ body a {
   transform: scale(0);
   animation: anim_carte 1s linear 1s both;
   margin: 0px;
-  /*.carte__validation {
-      display: grid;
-      grid-column: span 1;
-      align-items: center;
-      justify-content: center;
-      background-color: $color-tertiary;
-      border-radius: 0px 15px 15px 0px;
-      width: 0px;
-      transition: all 400ms linear 400ms;
-      .icone__validation {
-          color: transparent;
-          font-size: 20px;
-          transition: all 400ms linear 400ms;
-      }
-
-
-  }*/
 }
 .carte article .carte__validation {
   display: flex;
@@ -285,6 +268,87 @@ footer a {
     gap: 20px;
   }
 }
+/* animation loading spinner */
+.container__anim__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  opacity: 0.8;
+  z-index: 15;
+  animation: animation__spiner 0s 1s forwards;
+}
+
+/* Logo */
+.container__anim__loading--logospinner {
+  font-size: 1.8rem;
+  font-family: "shrikhand";
+  color: black;
+  position: absolute;
+}
+
+/* Ligne circulaire violette */
+.container__anim__loading--spinner {
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top: 5px double #9356dc;
+  animation: spiner 2s linear infinite;
+}
+
+.container__anim__loading--spinner::before,
+.container__anim__loading--spinner::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 5px solid transparent;
+}
+
+/* Ligne circulaire rose */
+.container__anim__loading--spinner::before {
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-top-color: #ff79da;
+  animation: spiner 1.8s linear infinite;
+}
+
+/* Ligne circulaire vert clair */
+.container__anim__loading--spinner::after {
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-top-color: #99e2d0;
+  animation: spiner 1s linear infinite;
+}
+
+@keyframes animation__spiner {
+  to {
+    visibility: hidden;
+    display: none;
+  }
+}
+@keyframes spiner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 @font-face {
   font-family: shrikhand;
   src: url(/font/Shrikhand/Shrikhand-Regular.otf);
@@ -310,6 +374,14 @@ h2, h3 {
   font-family: "roboto-bold";
 }
 
+@keyframes coeur2 {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /*haut de page*/
 body {
   margin: 0px;
@@ -462,14 +534,6 @@ h1, p {
   margin: 0px;
 }
 
-@keyframes coeur2 {
-  0% {
-    transform: scale(0.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 .coeur {
   font-size: 1.1em;
   display: grid;
@@ -540,12 +604,11 @@ footer a {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
-/* Chargement Page Principale */
-.animation__loading__container {
+/* animation loading spinner */
+.container__anim__loading {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: cssAnimation 0s 1s forwards;
   visibility: visible;
   position: fixed;
   top: 0;
@@ -555,19 +618,19 @@ footer a {
   background: white;
   opacity: 0.8;
   z-index: 15;
+  animation: animation__spiner 0s 1s forwards;
 }
 
-/* Logo OhMyFood centré */
-.animation__loading__container--logospinner {
+/* Logo */
+.container__anim__loading--logospinner {
   font-size: 1.8rem;
   font-family: "shrikhand";
   color: black;
   position: absolute;
 }
 
-/* Animation sous forme de lignes circulaires */
 /* Ligne circulaire violette */
-.animation__loading__container--spinner {
+.container__anim__loading--spinner {
   display: block;
   position: relative;
   width: 200px;
@@ -575,11 +638,11 @@ footer a {
   border-radius: 50%;
   border: 5px solid transparent;
   border-top: 5px double #9356DC;
-  animation: spin 2s linear infinite;
+  animation: spiner 2s linear infinite;
 }
 
-.animation__loading__container--spinner::before,
-.animation__loading__container--spinner::after {
+.container__anim__loading--spinner::before,
+.container__anim__loading--spinner::after {
   content: "";
   position: absolute;
   border-radius: 50%;
@@ -587,32 +650,32 @@ footer a {
 }
 
 /* Ligne circulaire rose */
-.animation__loading__container--spinner::before {
+.container__anim__loading--spinner::before {
   top: 5px;
   left: 5px;
   right: 5px;
   bottom: 5px;
   border-top-color: #FF79DA;
-  animation: spin 1.8s linear infinite;
+  animation: spiner 1.8s linear infinite;
 }
 
 /* Ligne circulaire vert clair */
-.animation__loading__container--spinner::after {
+.container__anim__loading--spinner::after {
   top: 15px;
   left: 15px;
   right: 15px;
   bottom: 15px;
   border-top-color: #99E2D0;
-  animation: spin 1s linear infinite;
+  animation: spiner 1s linear infinite;
 }
 
-@keyframes cssAnimation {
+@keyframes animation__spiner {
   to {
     visibility: hidden;
     display: none;
   }
 }
-@keyframes spin {
+@keyframes spiner {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -620,15 +683,6 @@ footer a {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
-  }
-}
-@keyframes anim_logo {
-  from {
-    transform: rotate(10deg) skewX(50deg);
-    color: #d06adb;
-  }
-  to {
-    transform: rotate(-10deg);
   }
 }
 
