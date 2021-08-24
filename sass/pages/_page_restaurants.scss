@@ -1,0 +1,202 @@
+
+/* Haut de page */
+
+body {
+    margin: 0px;
+    padding: 0px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'shrikhand', sans-serif;
+    font-family: 'roboto-bold';
+    font-family: 'roboto';
+    a {
+        text-decoration: none;
+        color: black;
+        display: contents;
+    }
+}
+.header_page {
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    justify-content: center;
+    align-items: center;
+    .retour {
+        font-size: x-large;
+        color: black;
+        padding: 15px;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        font-family: 'shrikhand';
+        margin-right: 35px;
+        font-size: 2.5rem;
+        
+    }
+}
+/* Banniere */
+
+.banniere img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+/* Carte des menu */
+
+.conteneur_menu {
+    background-color: rgb(246, 246, 246);
+    padding: 15px;
+    position: relative;
+    margin-top: -30px;
+    border-radius: 15px;
+    .titre_logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "shrikhand";
+    }
+}
+@keyframes anim_coeur {
+    0% {
+        transform: scale(.1);
+        
+   }
+    100% {
+       
+        transform: scale(1);
+    }
+  }
+
+.coeur__titre {
+    color: black;
+    margin-left: 20px;
+    display: grid;
+    font-size: 1.6em;
+
+    &:hover .plein {
+        animation: anim_coeur 600ms linear  alternate both ;
+        background: $color-degrad;
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-weight: 600;
+        color: transparent;
+    }
+    .vide {
+        color: black;
+            z-index: 1;    
+            cursor: pointer; 
+    }
+    .plein {
+        position: absolute;
+            z-index: 2;
+            cursor: pointer; 
+    }
+}
+.carte {
+    .carte__menu {
+        background-color: rgb(246, 246, 246);
+        display: grid;
+        gap: 15px;
+        padding: 15px;
+        border-radius: 25px 25px 0px 0px;
+    }
+    .carte__titre {
+        border-bottom: 2px solid #99e2d0;
+        width: 40px;
+    }
+}
+.carte article {
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 0fr;
+    padding: 0px;
+    background-color: white;
+    border-radius: 15px;
+    transform: translateY(0px);
+    animation: anim_carte 400ms linear 1s backwards;
+    margin: 0px;
+    .carte__validation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-tertiary;
+        border-radius: 0px 15px 15px 0px;
+        width: 0px;
+        transition: all 400ms linear 400ms;
+        .icone__validation {
+            color: transparent;
+            font-size: 20px;
+            transition: all 400ms linear 400ms;
+        }
+    }
+    &:hover .carte__validation {
+        width: 80px;
+
+        .icone__validation {
+            transform: rotateZ(360deg);
+            color: white;
+            transition: all 400ms linear 400ms;
+        }
+    }
+    .carte__texte {
+        overflow: hidden;
+        padding: 10px;
+        h3 {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin: 0px;
+        }
+        p {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin: 0px;
+        }
+    }
+
+    .carte__prix {
+        display: flex;
+        align-self: flex-end;
+        padding-left: 5px;
+        padding-bottom: 10px;
+    }
+}
+
+/* Boutton commander */
+
+.boutton {
+    display: flex;
+    justify-content: center;
+    @include boutton ;
+    &:hover{
+        transform: scale(1.1);
+        transition: all linear 400ms ;
+      
+    }
+}
+
+
+/* pied de page */
+footer {
+    background-color: rgb(39, 38, 38);
+    color: white;
+    padding: 20px;
+    h2{
+        font-family: 'shrikhand';
+    }
+    li {
+        display: grid;
+        grid-template-columns: 25px 1fr;
+    }
+    ul {
+        padding: 0px;
+    }
+    a {
+        color: white;
+    }
+}
+
+
+

@@ -6,40 +6,25 @@ $color-fond-secondary: rgb(234, 234, 234);
 $color-degrad: linear-gradient(to bottom, $color-secondary, $color-primary);
 $color: #d06adb;
 
+
 @font-face {
     font-family: shrikhand;
-    src: url(/font/Shrikhand/Shrikhand-Regular.otf);
+    src: url(font/Shrikhand/Shrikhand-Regular.otf);
+        
 }
+
 @font-face {
     font-family: roboto;
-    src: url(/font/Roboto/Roboto-Light.ttf);
+       src:  url(font/Roboto/Roboto-Light.ttf);
 }
+
 @font-face {
     font-family: roboto-bold;
-    src: url(/font/Roboto/Roboto-Bold.ttf);
+    src: url(font/Roboto/Roboto-Bold.ttf);
 }
 
-footer h2 {
-    font-family: "shrikhand", sans-serif;
-}
-span,
-p {
-    font-family: "roboto";
-    font-weight: lighter;
-}
-h3 {
-    font-family: "roboto-bold";
-}
 
-@keyframes coeur2 {
-    0% {
-        transform: scale(0.1);
-    }
 
-    100% {
-        transform: scale(1);
-    }
-}
 
 @keyframes anim_menu {
     0% {
@@ -65,6 +50,11 @@ h3 {
 body {
     margin: 0px;
     padding: 0px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'shrikhand', sans-serif;
+    font-family: 'roboto-bold';
     a {
         text-decoration: none;
         color: black;
@@ -85,11 +75,10 @@ body {
     .logo {
         display: flex;
         justify-content: center;
-
+        font-family: 'shrikhand';
         margin-right: 35px;
-        img {
-            width: 45%;
-        }
+        font-size: 2.5rem;
+        
     }
 }
 /* Banniere */
@@ -127,7 +116,7 @@ body {
         position: absolute;
     }
     &:hover .plein {
-        animation: coeur2 600ms ease-in both;
+        animation: anim_coeur 600ms ease-in both;
         background: $color-degrad;
         background-clip: text;
         -webkit-background-clip: text;
@@ -209,29 +198,43 @@ body {
 }
 
 /* Boutton commander */
-
-.boutton {
-    display: flex;
-    justify-content: center;
+@mixin boutton
+ {
     button {
         border-radius: 25px;
-        width: 150px;
         padding: 10px;
         margin-top: 10px;
         margin-bottom: 10px;
         border: none;
         background-image: linear-gradient(to bottom, #ff79da, #9356dc);
-        opacity: 0.8;
         color: white;
         font-weight: bold;
         font-size: 1em;
+        transform: scale(1);
+      
+      
     }
 }
+.boutton {
+    display: flex;
+    justify-content: center;
+    @include boutton ;
+    &:hover{
+        transform: scale(1.1);
+        transition: all linear 400ms ;
+      
+    }
+}
+
+
 /* pied de page */
 footer {
     background-color: rgb(39, 38, 38);
     color: white;
     padding: 20px;
+    h2{
+        font-family: 'shrikhand';
+    }
     li {
         display: grid;
         grid-template-columns: 25px 1fr;

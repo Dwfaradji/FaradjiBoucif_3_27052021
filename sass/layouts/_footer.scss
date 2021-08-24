@@ -1,0 +1,21 @@
+/* Pied de page */
+footer
+{
+    background-color: rgb(39, 38, 38);
+    color:white;
+    padding: 20px;
+    h2{
+        font-family: 'shrikhand';
+    }
+    
+    li{
+        display: grid;
+        grid-template-columns: 25px 1fr ;
+    }
+    ul{
+        padding: 0px;
+    }
+    a{
+        color: white;
+    }
+}

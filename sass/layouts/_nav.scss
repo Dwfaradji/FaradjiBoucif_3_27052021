@@ -1,0 +1,48 @@
+/* Navigation */
+    
+.fonctionement
+{
+    padding: 15px;
+    nav li{
+        display: grid;
+        grid-template-columns: 30px 30px 1fr;
+        background-color: $color-fond-primary;
+        border-radius: 15px;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        list-style-type: none;
+	    counter-increment: fonction; 
+	    margin-bottom: 10px;
+    }
+    nav li::before {
+	    content: counter(fonction); 
+    	padding: 10px;
+	    background:$color-primary;
+	    border-radius: 80px;
+	    font-weight: bold;
+	    font-size: 0.8em;
+	    color: white;	
+        position: relative;
+        right: 10px;	
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10px;
+        height: 10px;
+    }
+    nav li a{
+        text-decoration: none;
+        color: black;
+        display: contents;
+    }
+    nav ol{
+        gap: 10px;
+        display: grid;
+        padding: 15px;
+        counter-reset: fonction;
+    }
+    nav li:hover{
+        background-color: pastel($color-primary);
+    }
+}

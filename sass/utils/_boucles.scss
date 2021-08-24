@@ -1,0 +1,10 @@
+/* boucles*/
+
+@function pastel($clr) {
+    $hue: hue($clr);
+    $sat: 90%;
+    $light: 95%;
+    $pastel: hsl($hue, $sat, $light);
+
+    @return $pastel;
+} 

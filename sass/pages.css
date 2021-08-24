@@ -1,44 +1,14 @@
 @font-face {
   font-family: shrikhand;
-  src: url(/font/Shrikhand/Shrikhand-Regular.otf);
+  src: url(font/Shrikhand/Shrikhand-Regular.otf);
 }
 @font-face {
   font-family: roboto;
-  src: url(/font/Roboto/Roboto-Light.ttf);
+  src: url(font/Roboto/Roboto-Light.ttf);
 }
 @font-face {
   font-family: roboto-bold;
-  src: url(/font/Roboto/Roboto-Bold.ttf);
-}
-footer h2 {
-  font-family: "shrikhand", sans-serif;
-}
-
-span, p {
-  font-family: "roboto";
-  font-weight: lighter;
-}
-
-h3 {
-  font-family: "roboto-bold";
-}
-
-@-webkit-keyframes coeur2 {
-  0% {
-    transform: scale(0.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes coeur2 {
-  0% {
-    transform: scale(0.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+  src: url(font/Roboto/Roboto-Bold.ttf);
 }
 @-webkit-keyframes anim_menu {
   0% {
@@ -80,6 +50,11 @@ h3 {
 body {
   margin: 0px;
   padding: 0px;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "shrikhand", sans-serif;
+  font-family: "roboto-bold";
 }
 body a {
   text-decoration: none;
@@ -101,10 +76,9 @@ body a {
 .header_page .logo {
   display: flex;
   justify-content: center;
+  font-family: "shrikhand";
   margin-right: 35px;
-}
-.header_page .logo img {
-  width: 45%;
+  font-size: 2.5rem;
 }
 
 /* Banniere */
@@ -143,8 +117,8 @@ body a {
   position: absolute;
 }
 .coeur__titre:hover .plein {
-  -webkit-animation: coeur2 600ms ease-in both;
-          animation: coeur2 600ms ease-in both;
+  -webkit-animation: anim_coeur 600ms ease-in both;
+          animation: anim_coeur 600ms ease-in both;
   background: linear-gradient(to bottom, #ff79da, #9356dc);
   background-clip: text;
   -webkit-background-clip: text;
@@ -178,23 +152,6 @@ body a {
   -webkit-animation: anim_carte 1s linear 1s both;
           animation: anim_carte 1s linear 1s both;
   margin: 0px;
-  /*.carte__validation {
-      display: grid;
-      grid-column: span 1;
-      align-items: center;
-      justify-content: center;
-      background-color: $color-tertiary;
-      border-radius: 0px 15px 15px 0px;
-      width: 0px;
-      transition: all 400ms linear 400ms;
-      .icone__validation {
-          color: transparent;
-          font-size: 20px;
-          transition: all 400ms linear 400ms;
-      }
-
-
-  }*/
 }
 .carte article .carte__validation {
   display: flex;
@@ -249,16 +206,19 @@ body a {
 }
 .boutton button {
   border-radius: 25px;
-  width: 150px;
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
   border: none;
   background-image: linear-gradient(to bottom, #ff79da, #9356dc);
-  opacity: 0.8;
   color: white;
   font-weight: bold;
   font-size: 1em;
+  transform: scale(1);
+}
+.boutton:hover {
+  transform: scale(1.1);
+  transition: all linear 400ms;
 }
 
 /* pied de page */
@@ -266,6 +226,9 @@ footer {
   background-color: #272626;
   color: white;
   padding: 20px;
+}
+footer h2 {
+  font-family: "shrikhand";
 }
 footer li {
   display: grid;
@@ -313,5 +276,103 @@ footer a {
   .fonctionement nav ol {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+  }
+}
+/* animation loading spinner */
+.container__anim__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  opacity: 0.8;
+  z-index: 15;
+  -webkit-animation: animation__spiner 0s 1s forwards;
+          animation: animation__spiner 0s 1s forwards;
+}
+
+/* Logo */
+.container__anim__loading--logospinner {
+  font-size: 1.8rem;
+  font-family: "shrikhand";
+  color: black;
+  position: absolute;
+}
+
+/* Ligne circulaire violette */
+.container__anim__loading--spinner {
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top: 5px double #9356dc;
+  -webkit-animation: spiner 2s linear infinite;
+          animation: spiner 2s linear infinite;
+}
+
+.container__anim__loading--spinner::before,
+.container__anim__loading--spinner::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 5px solid transparent;
+}
+
+/* Ligne circulaire rose */
+.container__anim__loading--spinner::before {
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-top-color: #ff79da;
+  -webkit-animation: spiner 1.8s linear infinite;
+          animation: spiner 1.8s linear infinite;
+}
+
+/* Ligne circulaire vert clair */
+.container__anim__loading--spinner::after {
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-top-color: #99e2d0;
+  -webkit-animation: spiner 1s linear infinite;
+          animation: spiner 1s linear infinite;
+}
+
+@-webkit-keyframes animation__spiner {
+  to {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+@keyframes animation__spiner {
+  to {
+    visibility: hidden;
+    display: none;
+  }
+}
+@-webkit-keyframes spiner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spiner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }/*# sourceMappingURL=pages.css.map */
