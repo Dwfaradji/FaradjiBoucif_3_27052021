@@ -1,8 +1,8 @@
 /* Pied de page */
 footer
 {
-    background-color: rgb(39, 38, 38);
-    color:white;
+    background-color: rgb(48, 46, 46);
+    color: $color-text-primary;
     padding: 20px;
     h2{
         font-family: 'shrikhand';
@@ -10,12 +10,15 @@ footer
     
     li{
         display: grid;
-        grid-template-columns: 25px 1fr ;
+        grid-template-columns: 25px 1fr;
     }
     ul{
-        padding: 0px;
-    }
-    a{
-        color: white;
-    }
+        padding: 0px;     
+   }
+   a{
+       color: $color-text-primary;
+   }
+   .rot{
+    transform:rotate(-30deg);
+       }
 }

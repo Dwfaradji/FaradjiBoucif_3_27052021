@@ -231,12 +231,13 @@ body {
   margin-right: auto;
   font-family: "shrikhand";
   font-family: "roboto-bold";
+  font-family: "roboto";
 }
 
 a {
   text-decoration: none;
-  color: black;
   display: contents;
+  color: black;
 }
 
 .logo {
@@ -282,26 +283,38 @@ form input ::placeholder {
   padding-bottom: 30px;
   padding-top: 10px;
 }
+.bloc_titre .titre {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+.bloc_titre .titre h1 {
+  font-family: "roboto-bold";
+}
+.bloc_titre .titre p {
+  color: #838181;
+}
 .bloc_titre button {
   border-radius: 25px;
-  padding: 10px;
+  padding: 15px 25px 15px 25px;
   margin-top: 10px;
   margin-bottom: 10px;
   border: none;
   background-image: linear-gradient(to bottom, #ff79da, #9356dc);
   color: white;
-  font-weight: bold;
   font-size: 1em;
   transform: scale(1);
+  box-shadow: 2px 5px 2px #d3cdcd;
 }
-.bloc_titre h1, .bloc_titre p {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 70%;
+.bloc_titre button:hover {
+  transform: scale(1.1);
+  transition: all linear 400ms;
+  cursor: pointer;
 }
 
 /* Navigation */
 .fonctionement {
+  font-family: "roboto-bold";
   padding: 15px;
 }
 .fonctionement nav li {
@@ -315,13 +328,14 @@ form input ::placeholder {
   list-style-type: none;
   counter-increment: fonction;
   margin-bottom: 10px;
+  font-family: "roboto";
+  font-weight: bolder;
 }
 .fonctionement nav li::before {
   content: counter(fonction);
   padding: 10px;
   background: #9356DC;
   border-radius: 80px;
-  font-weight: bold;
   font-size: 0.8em;
   color: white;
   position: relative;
@@ -345,13 +359,20 @@ form input ::placeholder {
 }
 .fonctionement nav li:hover {
   background-color: #f1e7fe;
+  color: #9356DC;
+}
+.fonctionement nav li:hover i {
+  color: #9356DC;
 }
 
 /* Restaurants */
 .conteneur_restaurants {
   display: grid;
   background-color: #f6f6f6;
-  padding: 0px 15px 50px 15px;
+  padding: 25px 15px 50px 15px;
+}
+.conteneur_restaurants h2 {
+  font-family: "roboto-bold";
 }
 .conteneur_restaurants .bloc_restaurants {
   display: grid;
@@ -369,12 +390,13 @@ form input ::placeholder {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  height: 150px;
+  height: 200px;
   border-radius: 15px 15px 0px 0px;
 }
 .conteneur_restaurants .etiquette_nouveau {
   background-color: #99E2D0;
   color: #15a782;
+  font-family: "roboto-bold";
   position: absolute;
   top: 10px;
   right: 10px;
@@ -386,7 +408,11 @@ form input ::placeholder {
   display: grid;
   grid-template-columns: 2fr 0.5fr;
 }
-.carte_texte h3, .carte_texte span {
+.carte_texte h3 {
+  margin: 0px;
+  font-family: "roboto-bold";
+}
+.carte_texte span {
   margin: 0px;
 }
 
@@ -424,8 +450,8 @@ form input ::placeholder {
 
 /* Pied de page */
 footer {
-  background-color: #272626;
-  color: white;
+  background-color: #302e2e;
+  color: #ffff;
   padding: 20px;
 }
 footer h2 {
@@ -439,26 +465,13 @@ footer ul {
   padding: 0px;
 }
 footer a {
-  color: white;
+  color: #ffff;
+}
+footer .rot {
+  transform: rotate(-30deg);
 }
 
 /* Haut de page */
-body {
-  margin: 0px;
-  padding: 0px;
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: "shrikhand", sans-serif;
-  font-family: "roboto-bold";
-  font-family: "roboto";
-}
-body a {
-  text-decoration: none;
-  color: black;
-  display: contents;
-}
-
 .header_page {
   display: grid;
   grid-template-columns: 0fr 1fr;
@@ -501,14 +514,6 @@ body a {
   font-family: "shrikhand";
 }
 
-@keyframes anim_coeur {
-  0% {
-    transform: scale(0.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 .coeur__titre {
   color: black;
   margin-left: 20px;
@@ -551,12 +556,47 @@ body a {
   display: grid;
   grid-template-columns: 1fr 0.1fr 0fr;
   padding: 0px;
+  margin: 0px;
+  box-shadow: 2px 5px 2px #ebe7e7;
   background-color: white;
   border-radius: 15px;
   transform: translateY(0px);
-  -webkit-animation: anim_carte 400ms linear 1s backwards;
-          animation: anim_carte 400ms linear 1s backwards;
-  margin: 0px;
+}
+.carte article.carte_1 {
+  -webkit-animation: anim_carte 1s linear 200ms backwards;
+          animation: anim_carte 1s linear 200ms backwards;
+}
+.carte article.carte_2 {
+  -webkit-animation: anim_carte 1s linear 300ms backwards;
+          animation: anim_carte 1s linear 300ms backwards;
+}
+.carte article.carte_3 {
+  -webkit-animation: anim_carte 1s linear 400ms backwards;
+          animation: anim_carte 1s linear 400ms backwards;
+}
+.carte article.carte_4 {
+  -webkit-animation: anim_carte 1s linear 500ms backwards;
+          animation: anim_carte 1s linear 500ms backwards;
+}
+.carte article.carte_5 {
+  -webkit-animation: anim_carte 1s linear 600ms backwards;
+          animation: anim_carte 1s linear 600ms backwards;
+}
+.carte article.carte_6 {
+  -webkit-animation: anim_carte 1s linear 700ms backwards;
+          animation: anim_carte 1s linear 700ms backwards;
+}
+.carte article.carte_7 {
+  -webkit-animation: anim_carte 1s linear 800ms backwards;
+          animation: anim_carte 1s linear 800ms backwards;
+}
+.carte article.carte_8 {
+  -webkit-animation: anim_carte 1s linear 900ms backwards;
+          animation: anim_carte 1s linear 900ms backwards;
+}
+.carte article.carte_9 {
+  -webkit-animation: anim_carte 1s linear 1s backwards;
+          animation: anim_carte 1s linear 1s backwards;
 }
 .carte article .carte__validation {
   display: flex;
@@ -567,10 +607,11 @@ body a {
   width: 0px;
   transition: all 400ms linear 400ms;
 }
-.carte article .carte__validation .icone__validation {
-  color: transparent;
+.carte article .icone__validation {
+  visibility: hidden;
   font-size: 20px;
   transition: all 400ms linear 400ms;
+  color: transparent;
 }
 .carte article:hover .carte__validation {
   width: 80px;
@@ -579,6 +620,7 @@ body a {
   transform: rotateZ(360deg);
   color: white;
   transition: all 400ms linear 400ms;
+  visibility: visible;
 }
 .carte article .carte__texte {
   overflow: hidden;
@@ -589,6 +631,7 @@ body a {
   white-space: nowrap;
   text-overflow: ellipsis;
   margin: 0px;
+  font-family: "roboto-bold";
 }
 .carte article .carte__texte p {
   overflow: hidden;
@@ -599,7 +642,7 @@ body a {
 .carte article .carte__prix {
   display: flex;
   align-self: flex-end;
-  padding-left: 5px;
+  padding-right: 15px;
   padding-bottom: 10px;
 }
 
@@ -610,37 +653,19 @@ body a {
 }
 .boutton button {
   border-radius: 25px;
-  padding: 10px;
+  padding: 15px 25px 15px 25px;
   margin-top: 10px;
   margin-bottom: 10px;
   border: none;
   background-image: linear-gradient(to bottom, #ff79da, #9356dc);
   color: white;
-  font-weight: bold;
   font-size: 1em;
   transform: scale(1);
+  box-shadow: 2px 5px 2px #d3cdcd;
+  width: 200px;
 }
-.boutton:hover {
+.boutton button:hover {
   transform: scale(1.1);
   transition: all linear 400ms;
-}
-
-/* pied de page */
-footer {
-  background-color: #272626;
-  color: white;
-  padding: 20px;
-}
-footer h2 {
-  font-family: "shrikhand";
-}
-footer li {
-  display: grid;
-  grid-template-columns: 25px 1fr;
-}
-footer ul {
-  padding: 0px;
-}
-footer a {
-  color: white;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

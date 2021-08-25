@@ -1,21 +1,7 @@
 
 /* Haut de page */
 
-body {
-    margin: 0px;
-    padding: 0px;
-    max-width: 1500px;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'shrikhand', sans-serif;
-    font-family: 'roboto-bold';
-    font-family: 'roboto';
-    a {
-        text-decoration: none;
-        color: black;
-        display: contents;
-    }
-}
+
 .header_page {
     display: grid;
     grid-template-columns: 0fr 1fr;
@@ -58,16 +44,6 @@ body {
         font-family: "shrikhand";
     }
 }
-@keyframes anim_coeur {
-    0% {
-        transform: scale(.1);
-        
-   }
-    100% {
-       
-        transform: scale(1);
-    }
-  }
 
 .coeur__titre {
     color: black;
@@ -111,11 +87,40 @@ body {
     display: grid;
     grid-template-columns: 1fr 0.1fr 0fr;
     padding: 0px;
+    margin: 0px;
+    box-shadow: 2px 5px 2px rgb(235, 231, 231);
     background-color: white;
     border-radius: 15px;
     transform: translateY(0px);
-    animation: anim_carte 400ms linear 1s backwards;
-    margin: 0px;
+                                                        
+    &.carte_1{
+        animation: anim_carte 1s linear 200ms backwards;
+    }
+    &.carte_2{
+        animation: anim_carte 1s linear 300ms backwards;
+    }
+    &.carte_3{
+        animation: anim_carte 1s linear 400ms backwards;
+    }
+    &.carte_4{
+        animation: anim_carte 1s linear 500ms backwards;
+    }
+    &.carte_5{
+        animation: anim_carte 1s linear 600ms backwards;
+    }
+    &.carte_6{
+        animation: anim_carte 1s linear 700ms backwards;
+    }
+    &.carte_7{
+        animation: anim_carte 1s linear 800ms backwards;
+    }
+    &.carte_8{
+        animation: anim_carte 1s linear 900ms backwards;
+    }
+    &.carte_9{
+        animation: anim_carte 1s linear 1s backwards;
+        }
+        
     .carte__validation {
         display: flex;
         align-items: center;
@@ -124,11 +129,13 @@ body {
         border-radius: 0px 15px 15px 0px;
         width: 0px;
         transition: all 400ms linear 400ms;
+       }
         .icone__validation {
-            color: transparent;
+            visibility: hidden;
             font-size: 20px;
-            transition: all 400ms linear 400ms;
-        }
+            transition:  all 400ms linear 400ms ;  
+            color: transparent;              
+        
     }
     &:hover .carte__validation {
         width: 80px;
@@ -137,6 +144,7 @@ body {
             transform: rotateZ(360deg);
             color: white;
             transition: all 400ms linear 400ms;
+            visibility: visible;
         }
     }
     .carte__texte {
@@ -147,6 +155,7 @@ body {
             white-space: nowrap;
             text-overflow: ellipsis;
             margin: 0px;
+            font-family: $font-bold;
         }
         p {
             overflow: hidden;
@@ -159,7 +168,7 @@ body {
     .carte__prix {
         display: flex;
         align-self: flex-end;
-        padding-left: 5px;
+        padding-right: 15px;
         padding-bottom: 10px;
     }
 }
@@ -169,32 +178,16 @@ body {
 .boutton {
     display: flex;
     justify-content: center;
-    @include boutton ;
-    &:hover{
+   
+    button{
+        @include boutton ;
+        width: 200px;
+    
+    &:hover {
         transform: scale(1.1);
         transition: all linear 400ms ;
-      
-    }
-}
-
-
-/* pied de page */
-footer {
-    background-color: rgb(39, 38, 38);
-    color: white;
-    padding: 20px;
-    h2{
-        font-family: 'shrikhand';
-    }
-    li {
-        display: grid;
-        grid-template-columns: 25px 1fr;
-    }
-    ul {
-        padding: 0px;
-    }
-    a {
-        color: white;
+        cursor: pointer;      
+        }
     }
 }
 

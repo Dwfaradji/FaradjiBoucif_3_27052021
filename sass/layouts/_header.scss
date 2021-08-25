@@ -1,66 +1,75 @@
 /*haut de page*/
-body
-{
+body {
     margin: 0px;
     max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'shrikhand';
-    font-family: 'roboto-bold';
+    font-family: "shrikhand";
+    font-family: "roboto-bold";
+    font-family: 'roboto';
 }
-a 
-{
+a {
     text-decoration: none;
-    color: black;
     display: contents;
+    color: black;
 }
-.logo
-{
+.logo {
     display: flex;
     justify-content: center;
     padding: 10px;
-    font-family: 'shrikhand';
+    font-family: "shrikhand";
     font-size: 3rem;
-   
 }
-   
+
 /* Barre de Recherche */
-form
-{
+form {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $color-fond-secondary;
     padding: 10px;
     border-top: 1px inset #ffffff;
-    label{
+    label {
         font-size: small;
         margin-right: 10px;
     }
-    input{
+    input {
         border: none;
         background-color: transparent;
-        
-        ::placeholder{
+
+        ::placeholder {
             color: black;
         }
     }
 }
 /* Titre */
 
-.bloc_titre
-{
-    background-color:$color-fond-primary;
+.bloc_titre {
+    background-color: $color-fond-primary;
     justify-content: center;
     text-align: center;
     padding-bottom: 30px;
     padding-top: 10px;
-    @include boutton;
-h1, p 
-{
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 70%;
-  
-}
+
+    
+    .titre{
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    h1 {
+        font-family: 'roboto-bold';
+        }
+    p {
+       color: #838181;
+    }
+    }
+    button{
+        @include boutton;
+    &:hover{
+        transform: scale(1.1);
+        transition: all linear 400ms ;
+        cursor: pointer;      
+    }
+    }
+    
 }
