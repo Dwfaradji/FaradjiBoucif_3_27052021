@@ -1,24 +1,27 @@
 /* media tablette page d'acceuil */
-@media  screen and (min-width:600px) 
-{
-    .bloc_restaurants{
-        display:grid;
+@media screen and (min-width: 600px) {
+    .bloc_restaurants {
+        display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    footer ul{
+    footer h2 {
+        display: flex;
+        justify-content: center;
+    }
+    footer ul {
         display: grid;
-        grid-template-columns: 1fr 1fr ;
-    } 
-    .fonctionement nav ol{
+        grid-template-columns: 1fr 1fr;
+    }
+    .fonctionement nav ol {
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
-    }  
+    }
 }
-@media screen and (min-width: 1200px){
-    .bloc_restaurants{
+@media screen and (min-width: 1200px) {
+    .bloc_restaurants {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-} 
+}
 
 /*media tablette page restaurants */
 @media screen and (min-width: 600px) {
@@ -28,10 +31,9 @@
         display: grid;
     }
     .carte {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-content: center;
-        gap: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
     }
     .carte__titre {
         height: 20px;
@@ -42,12 +44,18 @@
     .conteneur_menu {
         border-radius: 15px 15px 0px 0px;
     }
-    footer ul {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+
     .fonctionement nav ol {
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .carte {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        gap: 15px;
+        width: auto;
     }
 }

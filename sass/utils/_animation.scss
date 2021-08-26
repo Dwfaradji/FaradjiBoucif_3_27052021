@@ -29,6 +29,20 @@
         transform: rotate(360deg);
     }
 }
+@keyframes anim_text{
+    0%{
+        transform: rotate(10deg);
+        
+    }
+    50%{
+        transform: rotate(-10deg);
+        
+    }
+    100%{
+        transform: rotate(10deg);
+        color: $color-primary;
+    }
+}
 
 /* animation loading spinner */
 
@@ -52,10 +66,13 @@
 /* Logo */
 
 .container__anim__loading--logospinner {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-family: 'shrikhand';
     color: black;
     position: absolute;
+    animation: anim_text 800ms  infinite backwards;
+    
+    
 }
 
 /* Ligne circulaire violette */
@@ -66,8 +83,8 @@
     height: 200px;
     border-radius: 50%;
     border: 5px solid transparent;
-    border-top: 5px double $color-primary;
-    animation: spiner 2s linear infinite;
+    border-top: 5px solid $color-primary;
+    animation: spiner 2s linear 200ms infinite;
 }
 
 .container__anim__loading--spinner::before,
@@ -87,7 +104,7 @@
     right: 5px;
     bottom: 5px;
     border-top-color: $color-secondary;
-    animation: spiner 1.8s linear infinite;
+    animation: spiner 1s linear 600ms infinite;
 }
 
 

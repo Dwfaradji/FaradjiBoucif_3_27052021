@@ -24,6 +24,18 @@
     transform: rotate(360deg);
   }
 }
+@keyframes anim_text {
+  0% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+    color: #9356DC;
+  }
+}
 /* animation loading spinner */
 .container__anim__loading {
   display: flex;
@@ -43,10 +55,11 @@
 
 /* Logo */
 .container__anim__loading--logospinner {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: "shrikhand";
   color: black;
   position: absolute;
+  animation: anim_text 800ms infinite backwards;
 }
 
 /* Ligne circulaire violette */
@@ -57,8 +70,8 @@
   height: 200px;
   border-radius: 50%;
   border: 5px solid transparent;
-  border-top: 5px double #9356DC;
-  animation: spiner 2s linear infinite;
+  border-top: 5px solid #9356DC;
+  animation: spiner 2s linear 200ms infinite;
 }
 
 .container__anim__loading--spinner::before,
@@ -76,7 +89,7 @@
   right: 5px;
   bottom: 5px;
   border-top-color: #FF79DA;
-  animation: spiner 1.8s linear infinite;
+  animation: spiner 1s linear 600ms infinite;
 }
 
 /* Ligne circulaire vert clair */
@@ -128,6 +141,11 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  footer h2 {
+    display: flex;
+    justify-content: center;
+  }
+
   footer ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -152,10 +170,9 @@
   }
 
   .carte {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    gap: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
   }
 
   .carte__titre {
@@ -170,14 +187,18 @@
     border-radius: 15px 15px 0px 0px;
   }
 
-  footer ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
   .fonctionement nav ol {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .carte {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    gap: 15px;
+    width: auto;
   }
 }
 /*haut de page*/
@@ -202,7 +223,7 @@ a {
   justify-content: center;
   padding: 10px;
   font-family: "shrikhand";
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 /* Barre de Recherche */
@@ -337,6 +358,10 @@ form input ::placeholder {
   border-radius: 15px;
   position: relative;
 }
+.conteneur_restaurants article:hover {
+  transition: all linear 400ms;
+  transform: scale(1.02);
+}
 .conteneur_restaurants img {
   object-fit: cover;
   width: 100%;
@@ -408,7 +433,9 @@ footer h2 {
 }
 footer li {
   display: grid;
-  grid-template-columns: 25px 1fr;
+  grid-template-columns: 0fr 1fr;
+  gap: 10px;
+  white-space: nowrap;
 }
 footer ul {
   padding: 0px;
@@ -460,31 +487,6 @@ footer .rot {
   justify-content: center;
   align-items: center;
   font-family: "shrikhand";
-}
-
-.coeur__titre {
-  color: black;
-  margin-left: 20px;
-  display: grid;
-  font-size: 1.6em;
-}
-.coeur__titre:hover .plein {
-  animation: anim_coeur 600ms linear alternate both;
-  background: linear-gradient(to bottom, #FF79DA, #9356DC);
-  background-clip: text;
-  -webkit-background-clip: text;
-  font-weight: 600;
-  color: transparent;
-}
-.coeur__titre .vide {
-  color: black;
-  z-index: 1;
-  cursor: pointer;
-}
-.coeur__titre .plein {
-  position: absolute;
-  z-index: 2;
-  cursor: pointer;
 }
 
 .carte .carte__menu {
@@ -546,7 +548,6 @@ footer .rot {
   transition: all 400ms linear 400ms;
 }
 .carte article .icone__validation {
-  visibility: hidden;
   font-size: 20px;
   transition: all 400ms linear 400ms;
   color: transparent;
@@ -558,7 +559,6 @@ footer .rot {
   transform: rotateZ(360deg);
   color: white;
   transition: all 400ms linear 400ms;
-  visibility: visible;
 }
 .carte article .carte__texte {
   overflow: hidden;

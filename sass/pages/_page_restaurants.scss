@@ -45,31 +45,7 @@
     }
 }
 
-.coeur__titre {
-    color: black;
-    margin-left: 20px;
-    display: grid;
-    font-size: 1.6em;
 
-    &:hover .plein {
-        animation: anim_coeur 600ms linear  alternate both ;
-        background: $color-degrad;
-        background-clip: text;
-        -webkit-background-clip: text;
-        font-weight: 600;
-        color: transparent;
-    }
-    .vide {
-        color: black;
-            z-index: 1;    
-            cursor: pointer; 
-    }
-    .plein {
-        position: absolute;
-            z-index: 2;
-            cursor: pointer; 
-    }
-}
 .carte {
     .carte__menu {
         background-color: rgb(246, 246, 246);
@@ -131,7 +107,6 @@
         transition: all 400ms linear 400ms;
        }
         .icone__validation {
-            visibility: hidden;
             font-size: 20px;
             transition:  all 400ms linear 400ms ;  
             color: transparent;              
@@ -144,7 +119,7 @@
             transform: rotateZ(360deg);
             color: white;
             transition: all 400ms linear 400ms;
-            visibility: visible;
+           
         }
     }
     .carte__texte {
