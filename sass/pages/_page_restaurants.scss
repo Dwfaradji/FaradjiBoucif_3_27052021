@@ -1,6 +1,4 @@
-
 /* Haut de page */
-
 
 .header_page {
     display: grid;
@@ -16,10 +14,9 @@
     .logo {
         display: flex;
         justify-content: center;
-        font-family: 'shrikhand';
+        font-family: "shrikhand";
         margin-right: 35px;
         font-size: 2.5rem;
-        
     }
 }
 /* Banniere */
@@ -45,7 +42,6 @@
     }
 }
 
-
 .carte {
     .carte__menu {
         background-color: rgb(246, 246, 246);
@@ -68,35 +64,38 @@
     background-color: white;
     border-radius: 15px;
     transform: translateY(0px);
-                                                        
-    &.carte_1{
+
+    &.carte_1 {
         animation: anim_carte 1s linear 200ms backwards;
     }
-    &.carte_2{
+    &.carte_2 {
         animation: anim_carte 1s linear 300ms backwards;
     }
-    &.carte_3{
+    &.carte_3 {
         animation: anim_carte 1s linear 400ms backwards;
     }
-    &.carte_4{
+    &.carte_4 {
         animation: anim_carte 1s linear 500ms backwards;
     }
-    &.carte_5{
+    &.carte_5 {
         animation: anim_carte 1s linear 600ms backwards;
     }
-    &.carte_6{
+    &.carte_6 {
         animation: anim_carte 1s linear 700ms backwards;
     }
-    &.carte_7{
+    &.carte_7 {
         animation: anim_carte 1s linear 800ms backwards;
     }
-    &.carte_8{
+    &.carte_8 {
         animation: anim_carte 1s linear 900ms backwards;
     }
-    &.carte_9{
+    &.carte_9 {
         animation: anim_carte 1s linear 1s backwards;
-        }
-        
+    }
+    &.carte_10{
+        animation: anim_carte 1s linear 1100ms backwards;
+    }
+
     .carte__validation {
         display: flex;
         align-items: center;
@@ -105,12 +104,11 @@
         border-radius: 0px 15px 15px 0px;
         width: 0px;
         transition: all 400ms linear 400ms;
-       }
-        .icone__validation {
-            font-size: 20px;
-            transition:  all 400ms linear 400ms ;  
-            color: transparent;              
-        
+    }
+    .icone__validation {
+        font-size: 20px;
+        transition: all 400ms linear 400ms;
+        color: transparent;
     }
     &:hover .carte__validation {
         width: 80px;
@@ -119,7 +117,6 @@
             transform: rotateZ(360deg);
             color: white;
             transition: all 400ms linear 400ms;
-           
         }
     }
     .carte__texte {
@@ -153,18 +150,10 @@
 .boutton {
     display: flex;
     justify-content: center;
-   
-    button{
-        @include boutton ;
+
+    button {
+        @include boutton;
         width: 200px;
-    
-    &:hover {
-        transform: scale(1.1);
-        transition: all linear 400ms ;
-        cursor: pointer;      
-        }
+
     }
 }
-
-
-

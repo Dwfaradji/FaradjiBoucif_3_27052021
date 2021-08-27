@@ -6,7 +6,7 @@ body {
     margin-right: auto;
     font-family: "shrikhand";
     font-family: "roboto-bold";
-    font-family: 'roboto';
+    font-family: "roboto";
 }
 a {
     text-decoration: none;
@@ -51,25 +51,19 @@ form {
     padding-bottom: 30px;
     padding-top: 10px;
 
-    
-    .titre{
+    .titre {
         margin-left: auto;
         margin-right: auto;
         width: 80%;
-    h1 {
-        font-family: 'roboto-bold';
+        h1 {
+            font-family: "roboto-bold";
         }
-    p {
-       color: #838181;
+        p {
+            color: #838181;
+        }
     }
-    }
-    button{
+    button {
         @include boutton;
-    &:hover{
-        transform: scale(1.1);
-        transition: all linear 400ms ;
-        cursor: pointer;      
+      
     }
-    }
-    
 }

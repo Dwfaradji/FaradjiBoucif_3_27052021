@@ -33,7 +33,6 @@
   }
   100% {
     transform: rotate(10deg);
-    color: #9356DC;
   }
 }
 /* animation loading spinner */
@@ -50,7 +49,7 @@
   background: white;
   opacity: 0.8;
   z-index: 15;
-  animation: animation__spiner 0s 1s forwards;
+  animation: animation__spiner 2s 1s forwards;
 }
 
 /* Logo */
@@ -537,6 +536,9 @@ footer .rot {
 }
 .carte article.carte_9 {
   animation: anim_carte 1s linear 1s backwards;
+}
+.carte article.carte_10 {
+  animation: anim_carte 1s linear 1100ms backwards;
 }
 .carte article .carte__validation {
   display: flex;
