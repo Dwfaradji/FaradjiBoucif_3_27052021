@@ -5,7 +5,8 @@
     transform: scale(0.1);
   }
   100% {
-    transform: scale(1);
+    transform: scale(1.1);
+    color: transparent;
   }
 }
 @keyframes animation__spiner {
@@ -201,49 +202,12 @@
   }
 }
 /*haut de page*/
-body {
-  margin: 0px;
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: "shrikhand";
-  font-family: "roboto-bold";
-  font-family: "roboto";
-}
-
-a {
-  text-decoration: none;
-  display: contents;
-  color: black;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
+.logo h1 {
+  text-align: center;
+  padding: 5px;
   font-family: "shrikhand";
   font-size: 2.5rem;
-}
-
-/* Barre de Recherche */
-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #eaeaea;
-  padding: 10px;
-  border-top: 1px inset #ffffff;
-}
-form label {
-  font-size: small;
-  margin-right: 10px;
-}
-form input {
-  border: none;
-  background-color: transparent;
-}
-form input ::placeholder {
-  color: black;
+  margin: 0px;
 }
 
 /* Titre */
@@ -265,23 +229,6 @@ form input ::placeholder {
 .bloc_titre .titre p {
   color: #838181;
 }
-.bloc_titre button {
-  border-radius: 25px;
-  padding: 15px 25px 15px 25px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: none;
-  background-image: linear-gradient(to bottom, #ff79da, #9356dc);
-  color: white;
-  font-size: 1em;
-  transform: scale(1);
-  box-shadow: 2px 5px 2px #d3cdcd;
-}
-.bloc_titre button:hover {
-  transform: scale(1.1);
-  transition: all linear 400ms;
-  cursor: pointer;
-}
 
 /* Navigation */
 .fonctionement {
@@ -290,12 +237,10 @@ form input ::placeholder {
 }
 .fonctionement nav li {
   display: grid;
-  grid-template-columns: 30px 30px 1fr;
+  grid-template-columns: 0fr 1fr;
   background-color: #f6f6f6;
   border-radius: 15px;
   align-items: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
   list-style-type: none;
   counter-increment: fonction;
   margin-bottom: 10px;
@@ -320,7 +265,12 @@ form input ::placeholder {
 .fonctionement nav li a {
   text-decoration: none;
   color: black;
-  display: contents;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 0fr 1fr;
+  column-gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .fonctionement nav ol {
   gap: 10px;
@@ -435,6 +385,7 @@ footer li {
   grid-template-columns: 0fr 1fr;
   gap: 10px;
   white-space: nowrap;
+  padding-top: 5px;
 }
 footer ul {
   padding: 0px;
@@ -459,8 +410,7 @@ footer .rot {
   padding: 15px;
 }
 .header_page .logo {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   font-family: "shrikhand";
   margin-right: 35px;
   font-size: 2.5rem;
@@ -479,7 +429,7 @@ footer .rot {
   padding: 15px;
   position: relative;
   margin-top: -30px;
-  border-radius: 15px;
+  border-radius: 25px;
 }
 .conteneur_menu .titre_logo {
   display: flex;
@@ -591,7 +541,8 @@ footer .rot {
   display: flex;
   justify-content: center;
 }
-.boutton button {
+
+button {
   border-radius: 25px;
   padding: 15px 25px 15px 25px;
   margin-top: 10px;
@@ -602,12 +553,50 @@ footer .rot {
   font-size: 1em;
   transform: scale(1);
   box-shadow: 2px 5px 2px #d3cdcd;
-  width: 200px;
 }
-.boutton button:hover {
-  transform: scale(1.1);
+button:hover {
+  opacity: 1.1;
+  box-shadow: 15px 15px 15px #d3cdcd;
   transition: all linear 400ms;
   cursor: pointer;
+}
+
+/* Barre de Recherche */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+  padding: 10px;
+  border-top: 1px inset #ffffff;
+}
+form label {
+  font-size: small;
+  margin-right: 10px;
+}
+form input {
+  border: none;
+  background-color: transparent;
+}
+form input ::placeholder {
+  font-weight: bolder;
+  font-family: "roboto-bold";
+}
+
+body {
+  margin: 0px;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "shrikhand";
+  font-family: "roboto-bold";
+  font-family: "roboto";
+}
+
+a {
+  text-decoration: none;
+  display: contents;
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */

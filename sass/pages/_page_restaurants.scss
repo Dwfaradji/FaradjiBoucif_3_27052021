@@ -12,8 +12,7 @@
     }
 
     .logo {
-        display: flex;
-        justify-content: center;
+        text-align: center;
         font-family: "shrikhand";
         margin-right: 35px;
         font-size: 2.5rem;
@@ -33,7 +32,7 @@
     padding: 15px;
     position: relative;
     margin-top: -30px;
-    border-radius: 15px;
+    border-radius: 25px;
     .titre_logo {
         display: flex;
         justify-content: center;
@@ -92,7 +91,7 @@
     &.carte_9 {
         animation: anim_carte 1s linear 1s backwards;
     }
-    &.carte_10{
+    &.carte_10 {
         animation: anim_carte 1s linear 1100ms backwards;
     }
 
@@ -150,10 +149,4 @@
 .boutton {
     display: flex;
     justify-content: center;
-
-    button {
-        @include boutton;
-        width: 200px;
-
-    }
 }

@@ -1,0 +1,22 @@
+/* Barre de Recherche */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-fond-secondary;
+    padding: 10px;
+    border-top: 1px inset #ffffff;
+    label {
+        font-size: small;
+        margin-right: 10px;
+    }
+    input {
+        border: none;
+        background-color: transparent;
+
+        ::placeholder {
+            font-weight: bolder;
+            font-family: $font-bold;
+        }
+    }
+}
