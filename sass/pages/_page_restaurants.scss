@@ -1,4 +1,4 @@
-/* Haut de page */
+/* Page Menu */
 
 .header_page {
     display: grid;
@@ -9,12 +9,6 @@
         font-size: x-large;
         color: black;
         padding: 15px;
-    }
-    .logo {
-        text-align: center;
-        font-family: "shrikhand";
-        margin-right: 35px;
-        font-size: 2.5rem;
     }
 }
 /* Banniere */
@@ -92,6 +86,8 @@
     &.carte_10 {
         animation: anim_carte 1s linear 1100ms backwards;
     }
+    /* Validation menu */
+    
     .carte__validation {
         display: flex;
         align-items: center;
@@ -118,17 +114,11 @@
         overflow: hidden;
         padding: 10px;
         h3 {
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            margin: 0px;
+            @include overflow;
             font-family: $font-bold;
         }
         p {
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            margin: 0px;
+            @include overflow;
         }
     }
     .carte__prix {

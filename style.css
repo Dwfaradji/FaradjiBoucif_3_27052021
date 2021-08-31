@@ -1,4 +1,3 @@
-/* variable */
 /* annimation */
 @keyframes anim_coeur {
   0% {
@@ -6,9 +5,9 @@
   }
   100% {
     transform: scale(1.1);
-    color: transparent;
   }
 }
+/* animation loading spinner */
 @keyframes animation__spiner {
   to {
     visibility: hidden;
@@ -34,7 +33,6 @@
     transform: rotate(10deg);
   }
 }
-/* animation loading spinner */
 .container__anim__loading {
   display: flex;
   justify-content: center;
@@ -100,14 +98,7 @@
   animation: spiner 1s linear infinite;
 }
 
-@keyframes anim_menu {
-  0% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
+/* Animation carte Menu */
 @keyframes anim_carte {
   0% {
     transform: translateY(10px);
@@ -131,7 +122,6 @@
   font-family: roboto-bold;
   src: url(font/Roboto/Roboto-Bold.ttf);
 }
-/* boucles*/
 /* media tablette page d'acceuil */
 @media screen and (min-width: 600px) {
   .bloc_restaurants {
@@ -194,7 +184,7 @@
   }
 }
 /*haut de page*/
-.logo h1 {
+h1 {
   text-align: center;
   padding: 5px;
   font-family: "shrikhand";
@@ -358,7 +348,7 @@ footer .rot {
   transform: rotate(-30deg);
 }
 
-/* Haut de page */
+/* Page Menu */
 .header_page {
   display: grid;
   grid-template-columns: 0fr 1fr;
@@ -369,12 +359,6 @@ footer .rot {
   font-size: x-large;
   color: black;
   padding: 15px;
-}
-.header_page .logo {
-  text-align: center;
-  font-family: "shrikhand";
-  margin-right: 35px;
-  font-size: 2.5rem;
 }
 
 /* Banniere */
@@ -420,6 +404,7 @@ footer .rot {
   background-color: white;
   border-radius: 15px;
   transform: translateY(0px);
+  /* Validation menu */
 }
 .carte article.carte_1 {
   animation: anim_carte 1s linear 200ms backwards;
@@ -503,6 +488,7 @@ footer .rot {
   justify-content: center;
 }
 
+/* Boutton */
 button {
   border-radius: 25px;
   padding: 15px 25px 15px 25px;
