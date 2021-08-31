@@ -6,9 +6,9 @@
     }
     100% {
         transform: scale(1.1);
-        color: transparent;
     }
 }
+/* animation loading spinner */
 
 @keyframes animation__spiner {
     to {
@@ -36,8 +36,6 @@
         transform: rotate(10deg);
     }
 }
-
-/* animation loading spinner */
 
 .container__anim__loading {
     display: flex;
@@ -105,15 +103,7 @@
     border-top-color: $color-tertiary;
     animation: spiner 1s linear infinite;
 }
-
-@keyframes anim_menu {
-    0% {
-        transform: translateY(10px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
+/* Animation carte Menu */
 
 @keyframes anim_carte {
     0% {
