@@ -10,7 +10,6 @@
         color: black;
         padding: 15px;
     }
-
     .logo {
         text-align: center;
         font-family: "shrikhand";
@@ -63,7 +62,6 @@
     background-color: white;
     border-radius: 15px;
     transform: translateY(0px);
-
     &.carte_1 {
         animation: anim_carte 1s linear 200ms backwards;
     }
@@ -94,7 +92,6 @@
     &.carte_10 {
         animation: anim_carte 1s linear 1100ms backwards;
     }
-
     .carte__validation {
         display: flex;
         align-items: center;
@@ -102,20 +99,19 @@
         background-color: $color-tertiary;
         border-radius: 0px 15px 15px 0px;
         width: 0px;
-        transition: all 400ms linear 400ms;
+        transition: all 400ms linear;
     }
     .icone__validation {
         font-size: 20px;
-        transition: all 400ms linear 400ms;
+        transition: all 400ms linear;
         color: transparent;
     }
     &:hover .carte__validation {
         width: 80px;
-
         .icone__validation {
             transform: rotateZ(360deg);
             color: white;
-            transition: all 400ms linear 400ms;
+            transition: all 400ms linear;
         }
     }
     .carte__texte {
@@ -135,7 +131,6 @@
             margin: 0px;
         }
     }
-
     .carte__prix {
         display: flex;
         align-self: flex-end;

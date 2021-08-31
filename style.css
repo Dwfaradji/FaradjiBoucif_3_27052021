@@ -17,11 +17,9 @@
 }
 @keyframes spiner {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -148,21 +146,15 @@
 
   footer ul {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0fr 0fr;
+    justify-content: space-around;
   }
 
   .fonctionement nav ol {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
-}
-@media screen and (min-width: 1200px) {
-  .bloc_restaurants {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-/*media tablette page restaurants */
-@media screen and (min-width: 600px) {
+
   .boutton {
     grid-column: 2;
     justify-content: center;
@@ -186,10 +178,10 @@
   .conteneur_menu {
     border-radius: 15px 15px 0px 0px;
   }
-
-  .fonctionement nav ol {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+}
+@media screen and (min-width: 1200px) {
+  .bloc_restaurants {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -340,37 +332,6 @@
   margin: 0px;
 }
 
-.coeur {
-  font-size: 1.1em;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-}
-.coeur__icone {
-  color: black;
-  margin-left: 20px;
-  display: flex;
-  font-size: 1.6em;
-}
-.coeur__icone:hover .plein {
-  animation: anim_coeur 600ms linear alternate both;
-  background: linear-gradient(to bottom, #FF79DA, #9356DC);
-  background-clip: text;
-  -webkit-background-clip: text;
-  font-weight: 600;
-  color: transparent;
-}
-.coeur__icone .vide {
-  color: black;
-  z-index: 1;
-  cursor: pointer;
-}
-.coeur__icone .plein {
-  position: absolute;
-  z-index: 2;
-  cursor: pointer;
-}
-
 /* Pied de page */
 footer {
   background-color: #302e2e;
@@ -497,11 +458,11 @@ footer .rot {
   background-color: #99E2D0;
   border-radius: 0px 15px 15px 0px;
   width: 0px;
-  transition: all 400ms linear 400ms;
+  transition: all 400ms linear;
 }
 .carte article .icone__validation {
   font-size: 20px;
-  transition: all 400ms linear 400ms;
+  transition: all 400ms linear;
   color: transparent;
 }
 .carte article:hover .carte__validation {
@@ -510,7 +471,7 @@ footer .rot {
 .carte article:hover .carte__validation .icone__validation {
   transform: rotateZ(360deg);
   color: white;
-  transition: all 400ms linear 400ms;
+  transition: all 400ms linear;
 }
 .carte article .carte__texte {
   overflow: hidden;
@@ -548,16 +509,15 @@ button {
   margin-top: 10px;
   margin-bottom: 10px;
   border: none;
-  background-image: linear-gradient(to bottom, #ff79da, #9356dc);
+  background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
   color: white;
   font-size: 1em;
-  transform: scale(1);
   box-shadow: 2px 5px 2px #d3cdcd;
 }
 button:hover {
-  opacity: 1.1;
+  transition: box-shadow linear 400ms;
+  background: #d67fe0;
   box-shadow: 15px 15px 15px #d3cdcd;
-  transition: all linear 400ms;
   cursor: pointer;
 }
 
@@ -578,9 +538,9 @@ form input {
   border: none;
   background-color: transparent;
 }
-form input ::placeholder {
+form input::placeholder {
   font-weight: bolder;
-  font-family: "roboto-bold";
+  color: black;
 }
 
 body {
@@ -597,6 +557,36 @@ a {
   text-decoration: none;
   display: contents;
   color: black;
+}
+
+.coeur {
+  font-size: 1.1em;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.coeur__icone {
+  color: black;
+  margin-left: 20px;
+  display: flex;
+  font-size: 1.6em;
+}
+.coeur__icone:hover .plein {
+  animation: anim_coeur 600ms linear alternate both;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  font-weight: 600;
+  color: transparent;
+}
+.coeur__icone .vide {
+  color: black;
+  z-index: 1;
+  cursor: pointer;
+}
+.coeur__icone .plein {
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

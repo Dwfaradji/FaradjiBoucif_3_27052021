@@ -10,21 +10,13 @@
     }
     footer ul {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 0fr 0fr;
+        justify-content: space-around;
     }
     .fonctionement nav ol {
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
     }
-}
-@media screen and (min-width: 1200px) {
-    .bloc_restaurants {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
-
-/*media tablette page restaurants */
-@media screen and (min-width: 600px) {
     .boutton {
         grid-column: 2;
         justify-content: center;
@@ -44,12 +36,14 @@
     .conteneur_menu {
         border-radius: 15px 15px 0px 0px;
     }
-
-    .fonctionement nav ol {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
+ 
+}
+@media screen and (min-width: 1200px) {
+    .bloc_restaurants {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
+
 @media screen and (min-width: 1024px) {
     .carte {
         display: grid;

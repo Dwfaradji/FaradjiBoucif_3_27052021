@@ -4,15 +4,14 @@ button {
     margin-top: 10px;
     margin-bottom: 10px;
     border: none;
-    background-image: linear-gradient(to bottom, #ff79da, #9356dc);
+    background-image: $color-degrad;
     color: white;
     font-size: 1em;
-    transform: scale(1);
     box-shadow: 2px 5px 2px rgb(211, 205, 205);
     &:hover {
-            opacity: 1.1;
-            box-shadow: 15px 15px 15px rgb(211, 205, 205);
-            transition: all linear 400ms;
-            cursor: pointer;
+        transition: box-shadow linear 400ms;
+        background: lighten($color, 5);
+        box-shadow: 15px 15px 15px rgb(211, 205, 205);
+        cursor: pointer;
     }
 }

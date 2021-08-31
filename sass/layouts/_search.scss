@@ -13,10 +13,9 @@ form {
     input {
         border: none;
         background-color: transparent;
-
-        ::placeholder {
+        &::placeholder {
             font-weight: bolder;
-            font-family: $font-bold;
+            color: black;
         }
     }
 }
