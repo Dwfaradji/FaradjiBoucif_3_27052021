@@ -7,6 +7,17 @@
     transform: scale(1.1);
   }
 }
+/* Animation carte Menu */
+@keyframes anim_carte {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
 /* animation loading spinner */
 @keyframes animation__spiner {
   to {
@@ -98,17 +109,6 @@
   animation: spiner 1s linear infinite;
 }
 
-/* Animation carte Menu */
-@keyframes anim_carte {
-  0% {
-    transform: translateY(10px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
 /* Police*/
 @font-face {
   font-family: shrikhand;
@@ -119,8 +119,8 @@
   src: url(font/Roboto/Roboto-Light.ttf);
 }
 @font-face {
-  font-family: roboto-bold;
-  src: url(font/Roboto/Roboto-Bold.ttf);
+  font-family: roboto-regular;
+  src: url(font/Roboto/Roboto-Regular.ttf);
 }
 /* media tablette page d'acceuil */
 @media screen and (min-width: 600px) {
@@ -205,7 +205,7 @@ h1 {
   margin-right: auto;
   width: 80%;
 }
-.bloc_titre .titre h1 {
+.bloc_titre .titre h2 {
   font-family: "roboto-bold";
 }
 .bloc_titre .titre p {
@@ -467,7 +467,7 @@ footer .rot {
   white-space: nowrap;
   text-overflow: ellipsis;
   margin: 0px;
-  font-family: "roboto-bold";
+  font-family: "Roboto-Regular";
 }
 .carte article .carte__texte p {
   overflow: hidden;
@@ -573,6 +573,7 @@ a {
   position: absolute;
   z-index: 2;
   cursor: pointer;
+  animation: anim_coeur2 600ms linear alternate both;
 }
 
 /*# sourceMappingURL=style.css.map */

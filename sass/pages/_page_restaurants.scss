@@ -115,7 +115,9 @@
         padding: 10px;
         h3 {
             @include overflow;
-            font-family: $font-bold;
+           font-family: 'Roboto-Regular'
+            
+            
         }
         p {
             @include overflow;
