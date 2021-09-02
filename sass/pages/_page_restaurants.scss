@@ -87,7 +87,7 @@
         animation: anim_carte 1s linear 1100ms backwards;
     }
     /* Validation menu */
-    
+
     .carte__validation {
         display: flex;
         align-items: center;
@@ -115,9 +115,7 @@
         padding: 10px;
         h3 {
             @include overflow;
-           font-family: 'Roboto-Regular'
-            
-            
+            font-family: $font-bold;
         }
         p {
             @include overflow;

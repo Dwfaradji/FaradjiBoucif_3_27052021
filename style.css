@@ -467,7 +467,7 @@ footer .rot {
   white-space: nowrap;
   text-overflow: ellipsis;
   margin: 0px;
-  font-family: "Roboto-Regular";
+  font-family: "roboto-regular";
 }
 .carte article .carte__texte p {
   overflow: hidden;
