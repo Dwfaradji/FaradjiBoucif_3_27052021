@@ -206,7 +206,7 @@ h1 {
   width: 80%;
 }
 .bloc_titre .titre h2 {
-  font-family: "roboto-bold";
+  font-family: "roboto-regular";
 }
 .bloc_titre .titre p {
   color: #838181;
@@ -214,7 +214,7 @@ h1 {
 
 /* Navigation */
 .fonctionement {
-  font-family: "roboto-bold";
+  font-family: "roboto-regular";
   padding: 15px;
 }
 .fonctionement nav li {
@@ -275,7 +275,7 @@ h1 {
   padding: 25px 15px 50px 15px;
 }
 .conteneur_restaurants h2 {
-  font-family: "roboto-bold";
+  font-family: "roboto-regular";
 }
 .conteneur_restaurants .bloc_restaurants {
   display: grid;
@@ -302,7 +302,7 @@ h1 {
 .conteneur_restaurants .etiquette_nouveau {
   background-color: #99E2D0;
   color: #15a782;
-  font-family: "roboto-bold";
+  font-family: "roboto-regular";
   position: absolute;
   top: 10px;
   right: 10px;
@@ -316,7 +316,7 @@ h1 {
 }
 .carte_texte h3 {
   margin: 0px;
-  font-family: "roboto-bold";
+  font-family: "roboto-regular";
 }
 .carte_texte span {
   margin: 0px;
