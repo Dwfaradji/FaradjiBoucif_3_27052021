@@ -13,6 +13,8 @@
             animation: anim_coeur 600ms linear alternate both;
             background: $color-degrad;
             -webkit-background-clip: text;
+            -o-background-clip: text;
+            -moz-background-clip: text;
             font-weight: 600;
             color: transparent;
         }

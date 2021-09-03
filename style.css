@@ -22,7 +22,6 @@
 @keyframes animation__spiner {
   to {
     visibility: hidden;
-    display: none;
   }
 }
 @keyframes spiner {
@@ -57,7 +56,7 @@
   background: white;
   opacity: 0.8;
   z-index: 15;
-  animation: animation__spiner 2s 1s forwards;
+  animation: animation__spiner 1s 1s forwards;
 }
 
 /* Logo */
@@ -404,7 +403,6 @@ footer .rot {
   background-color: white;
   border-radius: 15px;
   transform: translateY(0px);
-  /* Validation menu */
 }
 .carte article.carte_1 {
   animation: anim_carte 1s linear 200ms backwards;
@@ -560,7 +558,10 @@ a {
 .coeur__icone:hover .plein {
   animation: anim_coeur 600ms linear alternate both;
   background: linear-gradient(to bottom, #FF79DA, #9356DC);
+  background-clip: text;
   -webkit-background-clip: text;
+  -o-background-clip: text;
+  -moz-background-clip: text;
   font-weight: 600;
   color: transparent;
 }

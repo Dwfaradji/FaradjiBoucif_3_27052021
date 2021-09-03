@@ -9,7 +9,6 @@
     }
 }
 
-
 /* Animation carte Menu */
 
 @keyframes anim_carte {
@@ -28,7 +27,6 @@
 @keyframes animation__spiner {
     to {
         visibility: hidden;
-        display: none;
     }
 }
 
@@ -65,7 +63,7 @@
     background: white;
     opacity: 0.8;
     z-index: 15;
-    animation: animation__spiner 2s 1s forwards;
+    animation: animation__spiner 1s 1s forwards;
 }
 
 /* Logo */
@@ -118,6 +116,3 @@
     border-top-color: $color-tertiary;
     animation: spiner 1s linear infinite;
 }
-
-
-
