@@ -40,11 +40,13 @@
 @-webkit-keyframes animation__spiner {
   to {
     visibility: hidden;
+    display: none;
   }
 }
 @keyframes animation__spiner {
   to {
     visibility: hidden;
+    display: none;
   }
 }
 @-webkit-keyframes spiner {
