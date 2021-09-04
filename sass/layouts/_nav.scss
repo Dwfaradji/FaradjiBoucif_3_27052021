@@ -1,0 +1,56 @@
+/* Navigation */
+
+.fonctionement {
+    font-family: $font-bold;
+    padding: 15px;
+    nav li {
+        display: grid;
+        grid-template-columns: 0fr 1fr;
+        background-color: $color-fond-primary;
+        border-radius: 15px;
+        align-items: center;
+        list-style-type: none;
+        counter-increment: fonction;
+        margin-bottom: 10px;
+        font-family: "roboto";
+        font-weight: bolder;
+    }
+    nav li::before {
+        content: counter(fonction);
+        padding: 10px;
+        background: $color-primary;
+        border-radius: 80px;
+        font-size: 0.8em;
+        color: white;
+        position: relative;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10px;
+        height: 10px;
+    }
+    nav li a {
+        text-decoration: none;
+        color: black;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 0fr 1fr;
+        column-gap: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    nav ol {
+        gap: 10px;
+        display: grid;
+        padding: 15px;
+        counter-reset: fonction;
+    }
+    nav li:hover {
+        background-color: pastel($color-primary);
+        color: $color-primary;
+        i {
+            color: $color-primary;
+        }
+    }
+}

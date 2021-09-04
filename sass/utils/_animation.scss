@@ -1,0 +1,119 @@
+/* annimation */
+
+@keyframes anim_coeur {
+    0% {
+        transform: scale(0.1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Animation carte Menu */
+
+@keyframes anim_carte {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* animation loading spinner */
+
+@keyframes animation__spiner {
+    to {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+@keyframes spiner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes anim_text {
+    0% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+.container__anim__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    opacity: 0.8;
+    z-index: 15;
+    animation: animation__spiner 1s 1s forwards;
+}
+
+/* Logo */
+
+.container__anim__loading--logospinner {
+    font-size: 1.6rem;
+    font-family: "shrikhand";
+    color: black;
+    position: absolute;
+    animation: anim_text 800ms infinite backwards;
+}
+
+/* Ligne circulaire violette */
+.container__anim__loading--spinner {
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top: 5px solid $color-primary;
+    animation: spiner 2s linear 200ms infinite;
+}
+
+.container__anim__loading--spinner::before,
+.container__anim__loading--spinner::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 5px solid transparent;
+}
+/* Ligne circulaire rose */
+
+.container__anim__loading--spinner::before {
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-top-color: $color-secondary;
+    animation: spiner 1s linear 600ms infinite;
+}
+
+/* Ligne circulaire vert clair */
+
+.container__anim__loading--spinner::after {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-top-color: $color-tertiary;
+    animation: spiner 1s linear infinite;
+}

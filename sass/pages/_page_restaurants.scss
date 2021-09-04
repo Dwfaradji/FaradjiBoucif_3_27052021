@@ -1,0 +1,136 @@
+/* Page Menu */
+
+.header_page {
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    justify-content: center;
+    align-items: center;
+    .retour {
+        font-size: x-large;
+        color: black;
+        padding: 15px;
+    }
+}
+/* Banniere */
+
+.banniere img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+/* Carte des menu */
+
+.conteneur_menu {
+    background-color: rgb(246, 246, 246);
+    padding: 15px;
+    position: relative;
+    margin-top: -30px;
+    border-radius: 25px;
+    .titre_logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "shrikhand";
+    }
+}
+
+.carte {
+    .carte__menu {
+        background-color: rgb(246, 246, 246);
+        display: grid;
+        gap: 15px;
+        padding: 15px;
+        border-radius: 25px 25px 0px 0px;
+    }
+    .carte__titre {
+        border-bottom: 2px solid #99e2d0;
+        width: 40px;
+    }
+}
+.carte article {
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 0fr;
+    padding: 0px;
+    margin: 0px;
+    box-shadow: 2px 5px 2px rgb(235, 231, 231);
+    background-color: white;
+    border-radius: 15px;
+    transform: translateY(0px);
+    &.carte_1 {
+        animation: anim_carte 1s linear 200ms backwards;
+    }
+    &.carte_2 {
+        animation: anim_carte 1s linear 300ms backwards;
+    }
+    &.carte_3 {
+        animation: anim_carte 1s linear 400ms backwards;
+    }
+    &.carte_4 {
+        animation: anim_carte 1s linear 500ms backwards;
+    }
+    &.carte_5 {
+        animation: anim_carte 1s linear 600ms backwards;
+    }
+    &.carte_6 {
+        animation: anim_carte 1s linear 700ms backwards;
+    }
+    &.carte_7 {
+        animation: anim_carte 1s linear 800ms backwards;
+    }
+    &.carte_8 {
+        animation: anim_carte 1s linear 900ms backwards;
+    }
+    &.carte_9 {
+        animation: anim_carte 1s linear 1s backwards;
+    }
+    &.carte_10 {
+        animation: anim_carte 1s linear 1100ms backwards;
+    }
+
+    .carte__validation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-tertiary;
+        border-radius: 0px 15px 15px 0px;
+        width: 0px;
+        transition: all 400ms linear;
+    }
+    .icone__validation {
+        font-size: 20px;
+        transition: all 400ms linear;
+        color: transparent;
+    }
+    &:hover .carte__validation {
+        width: 80px;
+        .icone__validation {
+            transform: rotateZ(360deg);
+            color: white;
+            transition: all 400ms linear;
+        }
+    }
+    .carte__texte {
+        overflow: hidden;
+        padding: 10px;
+        h3 {
+            @include overflow;
+            font-family: $font-bold;
+        }
+        p {
+            @include overflow;
+        }
+    }
+    .carte__prix {
+        display: flex;
+        align-self: flex-end;
+        padding-right: 15px;
+        padding-bottom: 10px;
+    }
+}
+
+/* Boutton commander */
+
+.boutton {
+    display: flex;
+    justify-content: center;
+}
