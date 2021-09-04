@@ -558,7 +558,6 @@ a {
 .coeur__icone:hover .plein {
   animation: anim_coeur 600ms linear alternate both;
   background: linear-gradient(to bottom, #FF79DA, #9356DC);
-  background-clip: text;
   -webkit-background-clip: text;
   -o-background-clip: text;
   -moz-background-clip: text;
