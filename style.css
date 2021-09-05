@@ -531,6 +531,7 @@ form input::placeholder {
 body {
   margin: 0px;
   max-width: 1500px;
+  min-width: 254px;
   margin-left: auto;
   margin-right: auto;
   font-family: "shrikhand";
